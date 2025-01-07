@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async() => {
-  const username = "milan144";
+  const username = "mhommet";
   const repoCount = 10;
   const apiUrl = `https://api.github.com/users/${username}/repos?per_page=${repoCount}&sort=updated`;
 
