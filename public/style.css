@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
 
-/* Color Palette based on your provided colors */
+/* One Dark Theme Colors */
 * {
-  background: #1E1E2E; /* Background */
+  background: #282C34; /* Dark Background */
   font-family: 'JetBrains Mono', monospace;
   font-weight: 500;
-  color: #CDD6F4; /* Foreground */
+  color: #ABB2BF; /* Foreground */
 }
 
 body {
@@ -14,8 +14,9 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 1rem;
-  color: #CDD6F4; /* Bright Foreground */
-  background-color: #1E1E2E; /* Background */
+  color: #ABB2BF; /* Bright Foreground */
+  background-color: #282C34; /* Background */
+  border: 1px solid #E06C75; /* Red */
 }
 
 h3 {
@@ -23,38 +24,38 @@ h3 {
   font-size: inherit;
   padding: 0 0.5em;
   margin-bottom: 0;
-  background-color: #F38BA8; /* Red */
-  color: #CDD6F4; /* Bright Foreground */
+  background-color: #E06C75; /* Red */
+  color: #ABB2BF; /* Bright Foreground */
 }
 
 a {
-  color: #F38BA8; /* Red */
+  color: #E06C75; /* Red */
   text-decoration: none;
 }
 
 footer {
-  color: #A6ADC8; /* Dim Foreground */
+  color: #5C6370; /* Dim Foreground */
   margin-top: auto;
 }
 
 .text-secondary {
-  color: #BAC2DE; /* Subtext1 */
+  color: #828997; /* Subtext1 */
 }
 
 .linkedin:hover {
-  color: #89B4FA; /* Blue */
+  color: #61AFEF; /* Blue */
 }
 
 .github:hover {
-  color: #94E2D5; /* Cyan */
+  color: #56B6C2; /* Cyan */
 }
 
 .teicee:hover {
-  color: #A6E3A1; /* Green */
+  color: #98C379; /* Green */
 }
 
 .cursor {
-  color: #F38BA8; /* Red */
+  color: #E06C75; /* Red */
 }
 
 .output {
@@ -68,13 +69,12 @@ footer {
   animation: typing 2s steps(25), blink .5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 10px solid #F38BA8; /* Red */
+  border-right: 10px solid #E06C75; /* Red */
 }
 
-/* animation */
-
+/* Animations */
 @keyframes fade {
-  0% { opacity: 0}
+  0% { opacity: 0 }
   50% { opacity: 0; }
   100% { opacity: 1; }
 }
@@ -85,10 +85,10 @@ footer {
 }
 
 @keyframes blink {
-  50% { border-color: transparent;}
+  50% { border-color: transparent; }
 }
 
-/* dynamic resizing */
+/* Responsive */
 @media (min-width:600px) {
   body {
     font-size: 1.25rem;
@@ -101,14 +101,14 @@ footer {
   padding-top: 1rem;
   animation: fade 5s;
   img {
-    border: 1px solid #F38BA8; /* Red */
+    border: 1px solid #E06C75; /* Red */
     border-radius: 5px;
     width: 100%;
     height: auto;
   }
 }
 
-/* Modal styles */
+/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
@@ -134,7 +134,7 @@ footer {
   position: absolute;
   top: 15px;
   right: 35px;
-  color: #CDD6F4; /* Bright Foreground */
+  color: #ABB2BF; /* Bright Foreground */
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
@@ -142,7 +142,7 @@ footer {
 
 .close:hover,
 .close:focus {
-  color: #BAC2DE; /* Subtext0 */
+  color: #828997; /* Subtext0 */
   text-decoration: none;
   cursor: pointer;
 }
@@ -165,13 +165,9 @@ footer {
 }
 
 #github-projects a:hover {
-  color: #94E2D5; /* Cyan */
+  color: #56B6C2; /* Cyan */
 }
 
 #cv a:hover {
-  color: #94E2D5; /* Cyan */
-}
-
-body {
-  border: 1px solid #F38BA8;
+  color: #56B6C2; /* Cyan */
 }
