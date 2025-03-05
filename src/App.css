@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* Catppuccin Mocha Theme Colors */
+* {
+  background: #1e1e2e; /* Base */
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  color: #cdd6f4; /* Text */
+}
+
+:root {
+  --rosewater: #f5e0dc;
+  --flamingo: #f2cdcd;
+  --pink: #f5c2e7;
+  --mauve: #cba6f7;
+  --red: #f38ba8;
+  --maroon: #eba0ac;
+  --peach: #fab387;
+  --yellow: #f9e2af;
+  --green: #a6e3a1;
+  --teal: #94e2d5;
+  --sky: #89dceb;
+  --sapphire: #74c7ec;
+  --blue: #89b4fa;
+  --lavender: #b4befe;
+  --text: #cdd6f4;
+  --subtext1: #bac2de;
+  --subtext0: #a6adc8;
+  --overlay2: #9399b2;
+  --overlay1: #7f849c;
+  --overlay0: #6c7086;
+  --surface2: #585b70;
+  --surface1: #45475a;
+  --surface0: #313244;
+  --base: #1e1e2e;
+  --mantle: #181825;
+  --crust: #11111b;
+}
+
+body {
+  min-height: 95vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: var(--text);
+  background-color: var(--base);
+  border: 8px solid;
+  border-image: linear-gradient(90deg, var(--rosewater), var(--flamingo), var(--pink), var(--mauve), var(--red), var(--maroon), var(--peach), var(--yellow), var(--green), var(--teal), var(--sky), var(--sapphire), var(--blue), var(--lavender)) 1;
+  animation: gradient 20s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    border-image-source: linear-gradient(90deg, var(--rosewater), var(--flamingo), var(--pink), var(--mauve), var(--red), var(--maroon), var(--peach), var(--yellow), var(--green), var(--teal), var(--sky), var(--sapphire), var(--blue), var(--lavender));
+  }
+  100% {
+    border-image-source: linear-gradient(90deg, var(--lavender), var(--blue), var(--sapphire), var(--sky), var(--teal), var(--green), var(--yellow), var(--peach), var(--maroon), var(--red), var(--mauve), var(--pink), var(--flamingo), var(--rosewater));
+  }
+}
+
+h3 {
+  display: inline-block;
+  font-size: inherit;
+  padding: 0 0.5em;
+  margin-bottom: 0;
+  background-color: var(--red);
+  color: var(--text);
+}
+
+a {
+  color: var(--red);
+  text-decoration: none;
+}
+
+footer {
+  color: var(--subtext0);
+  margin-top: auto;
+}
+
+.text-secondary {
+  color: var(--subtext1);
+}
+
+.linkedin:hover {
+  color: var(--blue);
+}
+
+.github:hover {
+  color: var(--teal);
+}
+
+.teicee:hover {
+  color: var(--green);
+}
+
+.cursor {
+  color: var(--red);
+}
+
+.output {
+  width: 100%;
+  max-width: 80ch;
+  animation: fade 5s;
+}
+
+.typeme {
+  width: 30ch;
+  animation: typing 2s steps(25), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 10px solid var(--red);
+}
+
+/* Animations */
+@keyframes fade {
+  0% { opacity: 0 }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 30ch; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Responsive */
+@media (min-width:600px) {
+  body {
+    font-size: 1.25rem;
+  }
+}
+
+.cv-container {
+  width: 40%;
+  height: auto;
+  padding-top: 1rem;
+  animation: fade 5s;
+}
+
+.cv-container img {
+  border: 1px solid var(--red);
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  background: none;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: var(--text);
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--subtext0);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.projects {
+  margin-top: 2rem;
+}
+
+#github-projects {
+  list-style: none;
+  padding: 0;
+}
+
+#github-projects li {
+  margin: 0.5rem 0;
+}
+
+#github-projects a {
+  text-decoration: none;
+}
+
+#github-projects a:hover {
+  color: var(--teal);
+}
+
+#cv a:hover {
+  color: var(--teal);
+}
