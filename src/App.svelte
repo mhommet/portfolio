@@ -42,55 +42,51 @@
     </ul>
 
     <p>
-      I'm a software developer based in France, specializing in software and mobile development but I'm also interested in game development.
+      Je suis Milan, un développeur fullstack basé en France.
     </p>
     <p>
-      I'm currently pursuing an MBA in development and management. I like to learn new languages and frameworks in my free time.
-      I have a work-study contract at <a href="https://www.teicee.com/" class='teicee' target="_blank" rel="noopener noreferrer" alt="teicee">Téïcée</a> as a backend developer.
-    </p>
-    <p>
-      I'm always looking for new challenges and opportunities, so feel free to contact me. I'm open to new projects and collaborations.
+      Je poursuis actuellement un MBA en développement et management de projets. J'aime apprendre de nouveaux langages et frameworks pendant mon temps libre.
+      J'ai un contrat d'alternance chez <a href="https://www.teicee.com/" class='teicee' target="_blank" rel="noopener noreferrer" alt="teicee">Téïcée</a> en tant que développeur fullstack.
     </p>
 
     <section class="education">
-      <h3>Education</h3>
+      <h3>Formation</h3>
       <ul>
-        <li>2023 - 2025 : Master degree - Fullstack developer</li>
-        <li>2022 - 2023 : Bachelor degree - Web developer</li>
-        <li>2020 - 2022 : BTEC Higher National Diploma - web and software development</li>
+        <li>2023 - 2025 : MBA - Développeur Fullstack</li>
+        <li>2022 - 2023 : BACHELOR - Développeur Web</li>
+        <li>2020 - 2022 : BTS SIO - Développement web et logiciel</li>
       </ul>
     </section>
 
     <section class="experiences">
-      <h3>Experiences</h3>
+      <h3>Expériences</h3>
       <ul>
-        <li>2022 - today : Fullstack Developer at Téïcée</li>
+        <li>2022 - aujourd'hui : Développeur Fullstack chez Téïcée</li>
       </ul>
     </section>
 
     <section class="skills">
-      <h3>Skills</h3>
+      <h3>Compétences</h3>
       <ul>
-        <li>Programming Languages: Python, JavaScript, Typescript, Dart, PHP</li>
-        <li>Mobile Development: Flutter, React Native</li>
-        <li>Software Development: Electron</li>
-        <li>Web Development: React, Symfony, VueJS, NextJS, NodeJS</li>
-        <li>Databases: MySQL, MongoDB, Microsoft SQL Server</li>
-        <li>Game Engine: Unity</li>
+        <li>Langages de programmation : Python, JavaScript, Typescript, Dart, PHP, C#</li>
+        <li>Développement Mobile : Flutter</li>
+        <li>Développement Logiciel : Electron</li>
+        <li>Développement Web : React, Symfony, VueJS, NextJS, NodeJS</li>
+        <li>Bases de données : MySQL, MongoDB</li>
       </ul>
     </section>
 
     <h3>CV</h3>
     <ul id="cv">
-      <li><a href="CV%20MILAN%20HOMMET.pdf">Download my cv</a></li>
+      <li><a href="CV%20MILAN%20HOMMET.pdf">Télécharger mon cv</a></li>
     </ul>
 
-    <h3>Projects</h3>
+    <h3>Projets</h3>
     <ul id="github-projects">
       {#each repositories as repo}
         <li>
-          <a href={repo.html_url} target="_blank" rel="noopener noreferrer" title={repo.description || "No description available"}>
-            {repo.name} - {repo.description || "No description available"}
+          <a href={repo.html_url} target="_blank" rel="noopener noreferrer" title={repo.description || "Aucune description disponible"}>
+            {repo.name} - {repo.description || "Aucune description disponible"}
           </a>
         </li>
       {/each}

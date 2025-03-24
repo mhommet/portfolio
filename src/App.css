@@ -41,9 +41,6 @@ body {
   font-size: 1rem;
   color: var(--text);
   background-color: var(--base);
-  border: 8px solid;
-  border-image: linear-gradient(90deg, var(--red), var(--yellow), var(--green), var(--cyan), var(--blue), var(--magenta)) 1;
-  animation: gradient 20s linear infinite;
 }
 
 @keyframes gradient {
