@@ -1,36 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
 
-/* One Dark Pro Theme Colors */
+/* Catppuccin Mocha Theme Colors */
 * {
-  background: #282c34; /* Base */
+  background: #1e1e2e; /* Base */
   font-family: 'JetBrains Mono', monospace;
   font-weight: 500;
-  color: #abb2bf; /* Text */
+  color: #cdd6f4; /* Text */
 }
 
 :root {
-  --base: #282c34;
-  --black: #1e2127;
-  --bright-black: #5c6370;
-  --red: #e06c75;
-  --green: #98c379;
-  --yellow: #d19a66;
-  --blue: #61afef;
-  --magenta: #c678dd;
-  --cyan: #56b6c2;
-  --white: #abb2bf;
-  --bright-white: #ffffff;
-  --text: #abb2bf;
-  --subtext1: #9da5b4;
-  --subtext0: #828997;
-  --overlay2: #6b727d;
-  --overlay1: #5a6374;
-  --overlay0: #4b5263;
-  --surface2: #3e4452;
-  --surface1: #353b45;
-  --surface0: #30343f;
-  --mantle: #21252b;
-  --crust: #181a1f;
+  --rosewater: #f5e0dc;
+  --flamingo: #f2cdcd;
+  --pink: #f5c2e7;
+  --mauve: #cba6f7;
+  --red: #f38ba8;
+  --maroon: #eba0ac;
+  --peach: #fab387;
+  --yellow: #f9e2af;
+  --green: #a6e3a1;
+  --teal: #94e2d5;
+  --sky: #89dceb;
+  --sapphire: #74c7ec;
+  --blue: #89b4fa;
+  --lavender: #b4befe;
+  --text: #cdd6f4;
+  --subtext1: #bac2de;
+  --subtext0: #a6adc8;
+  --overlay2: #9399b2;
+  --overlay1: #7f849c;
+  --overlay0: #6c7086;
+  --surface2: #585b70;
+  --surface1: #45475a;
+  --surface0: #313244;
+  --base: #1e1e2e;
+  --mantle: #181825;
+  --crust: #11111b;
 }
 
 body {
@@ -41,14 +45,17 @@ body {
   font-size: 1rem;
   color: var(--text);
   background-color: var(--base);
+  border: 8px solid;
+  border-image: linear-gradient(90deg, var(--rosewater), var(--flamingo), var(--pink), var(--mauve), var(--red), var(--maroon), var(--peach), var(--yellow), var(--green), var(--teal), var(--sky), var(--sapphire), var(--blue), var(--lavender)) 1;
+  animation: gradient 20s linear infinite;
 }
 
 @keyframes gradient {
   0% {
-    border-image-source: linear-gradient(90deg, var(--red), var(--yellow), var(--green), var(--cyan), var(--blue), var(--magenta));
+    border-image-source: linear-gradient(90deg, var(--rosewater), var(--flamingo), var(--pink), var(--mauve), var(--red), var(--maroon), var(--peach), var(--yellow), var(--green), var(--teal), var(--sky), var(--sapphire), var(--blue), var(--lavender));
   }
   100% {
-    border-image-source: linear-gradient(90deg, var(--magenta), var(--blue), var(--cyan), var(--green), var(--yellow), var(--red));
+    border-image-source: linear-gradient(90deg, var(--lavender), var(--blue), var(--sapphire), var(--sky), var(--teal), var(--green), var(--yellow), var(--peach), var(--maroon), var(--red), var(--mauve), var(--pink), var(--flamingo), var(--rosewater));
   }
 }
 
@@ -58,7 +65,7 @@ h3 {
   padding: 0 0.5em;
   margin-bottom: 0;
   background-color: var(--red);
-  color: var(--white);
+  color: var(--text);
 }
 
 a {
@@ -67,7 +74,7 @@ a {
 }
 
 footer {
-  color: var(--bright-black);
+  color: var(--subtext0);
   margin-top: auto;
 }
 
@@ -80,7 +87,7 @@ footer {
 }
 
 .github:hover {
-  color: var(--cyan);
+  color: var(--teal);
 }
 
 .teicee:hover {
@@ -176,7 +183,7 @@ footer {
 
 .close:hover,
 .close:focus {
-  color: var(--bright-black);
+  color: var(--subtext0);
   text-decoration: none;
   cursor: pointer;
 }
@@ -199,9 +206,9 @@ footer {
 }
 
 #github-projects a:hover {
-  color: var(--cyan);
+  color: var(--teal);
 }
 
 #cv a:hover {
-  color: var(--cyan);
+  color: var(--teal);
 }
