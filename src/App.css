@@ -1,40 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
 
-/* Catppuccin Mocha Theme Colors */
+/* Rosé Pine Theme Colors */
 * {
-  background: #1e1e2e; /* Base */
+  background: #191724; /* Base */
   font-family: 'JetBrains Mono', monospace;
   font-weight: 500;
-  color: #cdd6f4; /* Text */
+  color: #e0def4; /* Text */
 }
 
 :root {
-  --rosewater: #f5e0dc;
-  --flamingo: #f2cdcd;
-  --pink: #f5c2e7;
-  --mauve: #cba6f7;
-  --red: #f38ba8;
-  --maroon: #eba0ac;
-  --peach: #fab387;
-  --yellow: #f9e2af;
-  --green: #a6e3a1;
-  --teal: #94e2d5;
-  --sky: #89dceb;
-  --sapphire: #74c7ec;
-  --blue: #89b4fa;
-  --lavender: #b4befe;
-  --text: #cdd6f4;
-  --subtext1: #bac2de;
-  --subtext0: #a6adc8;
-  --overlay2: #9399b2;
-  --overlay1: #7f849c;
-  --overlay0: #6c7086;
-  --surface2: #585b70;
-  --surface1: #45475a;
-  --surface0: #313244;
-  --base: #1e1e2e;
-  --mantle: #181825;
-  --crust: #11111b;
+  --base: #191724;      /* Base (main) */
+  --surface: #1f1d2e;   /* Surface (main) */
+  --overlay: #26233a;   /* Overlay (main) */
+  --muted: #6e6a86;     /* Muted (main) */
+  --subtle: #908caa;    /* Subtle (main) */
+  --text: #e0def4;      /* Text (main) */
+  --love: #eb6f92;      /* Love (main) */
+  --gold: #f6c177;      /* Gold (main) */
+  --rose: #ebbcba;      /* Rose (main) */
+  --pine: #31748f;      /* Pine (main) */
+  --foam: #9ccfd8;      /* Foam (main) */
+  --iris: #c4a7e7;      /* Iris (main) */
+  --highlight-low: #21202e;    /* Highlight Low (main) */
+  --highlight-med: #403d52;    /* Highlight Med (main) */
+  --highlight-high: #524f67;   /* Highlight High (main) */
 }
 
 body {
@@ -45,17 +34,14 @@ body {
   font-size: 1rem;
   color: var(--text);
   background-color: var(--base);
-  border: 8px solid;
-  border-image: linear-gradient(90deg, var(--rosewater), var(--flamingo), var(--pink), var(--mauve), var(--red), var(--maroon), var(--peach), var(--yellow), var(--green), var(--teal), var(--sky), var(--sapphire), var(--blue), var(--lavender)) 1;
-  animation: gradient 20s linear infinite;
 }
 
 @keyframes gradient {
   0% {
-    border-image-source: linear-gradient(90deg, var(--rosewater), var(--flamingo), var(--pink), var(--mauve), var(--red), var(--maroon), var(--peach), var(--yellow), var(--green), var(--teal), var(--sky), var(--sapphire), var(--blue), var(--lavender));
+    border-image-source: linear-gradient(90deg, var(--rose), var(--love), var(--iris), var(--pine), var(--foam), var(--gold));
   }
   100% {
-    border-image-source: linear-gradient(90deg, var(--lavender), var(--blue), var(--sapphire), var(--sky), var(--teal), var(--green), var(--yellow), var(--peach), var(--maroon), var(--red), var(--mauve), var(--pink), var(--flamingo), var(--rosewater));
+    border-image-source: linear-gradient(90deg, var(--gold), var(--foam), var(--pine), var(--iris), var(--love), var(--rose));
   }
 }
 
@@ -64,38 +50,38 @@ h3 {
   font-size: inherit;
   padding: 0 0.5em;
   margin-bottom: 0;
-  background-color: var(--red);
+  background-color: var(--love);
   color: var(--text);
 }
 
 a {
-  color: var(--red);
+  color: var(--rose);
   text-decoration: none;
 }
 
 footer {
-  color: var(--subtext0);
+  color: var(--muted);
   margin-top: auto;
 }
 
 .text-secondary {
-  color: var(--subtext1);
+  color: var(--subtle);
 }
 
 .linkedin:hover {
-  color: var(--blue);
+  color: var(--foam);
 }
 
 .github:hover {
-  color: var(--teal);
+  color: var(--pine);
 }
 
 .teicee:hover {
-  color: var(--green);
+  color: var(--gold);
 }
 
 .cursor {
-  color: var(--red);
+  color: var(--love);
 }
 
 .output {
@@ -109,7 +95,7 @@ footer {
   animation: typing 2s steps(25), blink .5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 10px solid var(--red);
+  border-right: 10px solid var(--love);
 }
 
 /* Animations */
@@ -143,7 +129,7 @@ footer {
 }
 
 .cv-container img {
-  border: 1px solid var(--red);
+  border: 1px solid var(--love);
   border-radius: 5px;
   width: 100%;
   height: auto;
@@ -183,7 +169,7 @@ footer {
 
 .close:hover,
 .close:focus {
-  color: var(--subtext0);
+  color: var(--muted);
   text-decoration: none;
   cursor: pointer;
 }
@@ -206,9 +192,9 @@ footer {
 }
 
 #github-projects a:hover {
-  color: var(--teal);
+  color: var(--pine);
 }
 
 #cv a:hover {
-  color: var(--teal);
+  color: var(--pine);
 }
