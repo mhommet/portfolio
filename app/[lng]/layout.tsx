@@ -32,11 +32,9 @@ export const metadata: Metadata = {
     },
 };
 
-interface Params {
-    lng: string;
-}
+type Params = Promise<{lng: string}>;
 
-export async function generateStaticParams(): Promise<Params[]> {
+export async function generateStaticParams() {
     return languages.map((lng) => ({ lng }));
 }
 
@@ -49,7 +47,7 @@ export default async function RootLayout({
     children,
     params,
 }: RootLayoutProps): Promise<React.ReactElement> {
-    // Accéder à params de manière asynchrone comme indiqué dans la documentation
+    // Accéder à params de manière asynchrone
     const { lng } = await params;
     // Utiliser la valeur par défaut si nécessaire
     const language = lng || fallbackLng;
