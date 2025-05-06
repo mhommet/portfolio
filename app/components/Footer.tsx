@@ -17,94 +17,87 @@ export default function Footer({ lng }: FooterProps): React.ReactElement {
     const emailSubject = lng === 'fr' ? "Contact depuis le portfolio" : "Contact from portfolio";
     
     return (
-        <footer className="p-10 bg-base-300 text-base-content" id="contact">
+        <footer className="py-8 px-6 bg-base-300 text-base-content" id="contact">
             <div className="container mx-auto">
-                <h2 className="text-3xl font-bold text-center mb-12">{t('header.contact')}</h2>
+                <h2 className="text-3xl font-bold text-center mb-8">{t('header.contact')}</h2>
 
-                <div className="flex flex-col lg:flex-row gap-8 mb-12">
+                <div className="flex flex-col lg:flex-row gap-6 mb-8">
                     <div className="card bg-base-100 shadow-lg flex-1">
-                        <div className="card-body">
-                            <h3 className="card-title text-xl mb-4">
-                                {lng === 'fr' ? 'Travaillons ensemble' : "Let's work together"}
+                        <div className="card-body p-4">
+                            <h3 className="card-title text-lg mb-2">
+                                {t('footer.work_together')}
                             </h3>
-                            <p className="mb-4">
-                                {lng === 'fr'
-                                    ? "Vous avez un projet? N'hésitez pas à me contacter pour discuter de vos besoins et voir comment je peux vous aider."
-                                    : 'Do you have a project? Feel free to contact me to discuss your needs and see how I can help.'}
+                            <p className="mb-3 text-sm">
+                                {t('footer.project_inquiry')}
                             </p>
 
-                            <div className="space-y-4 mt-6">
-                                <div className="flex items-center gap-3">
-                                    <FaEnvelope className="text-primary" size={20} />
+                            <div className="space-y-3 mt-4">
+                                <div className="flex items-center gap-2">
+                                    <FaEnvelope className="text-primary" size={16} />
                                     <a
                                         href={`mailto:${emailContact}`}
-                                        className="link link-hover"
+                                        className="link link-hover text-sm"
                                     >
                                         {emailContact}
                                     </a>
                                 </div>
-                                <div className="flex items-center gap-3">
-                                    <FaPhone className="text-primary" size={20} />
-                                    <a href="tel:+33000000000" className="link link-hover">
-                                        +33 00 00 00 00 00
+                                <div className="flex items-center gap-2">
+                                    <FaPhone className="text-primary" size={16} />
+                                    <a href="tel:+33603963928" className="link link-hover text-sm">
+                                        +33 6 03 96 39 28
                                     </a>
                                 </div>
-                                <div className="flex items-center gap-3">
-                                    <FaMapMarkerAlt className="text-primary" size={20} />
-                                    <span>Caen, France</span>
+                                <div className="flex items-center gap-2">
+                                    <FaMapMarkerAlt className="text-primary" size={16} />
+                                    <span className="text-sm">Caen, France</span>
                                 </div>
                             </div>
 
-                            <div className="card-actions justify-end mt-6">
+                            <div className="card-actions justify-end mt-4">
                                 <a
                                     href={`mailto:${emailContact}?subject=${encodeURIComponent(emailSubject)}`}
-                                    className="btn btn-primary"
+                                    className="btn btn-primary btn-sm"
                                 >
-                                    {lng === 'fr' ? 'Envoyer un message' : 'Send a message'}
+                                    {t('footer.send_message')}
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <div className="card bg-base-100 shadow-lg flex-1">
-                        <div className="card-body">
-                            <h3 className="card-title text-xl mb-4">
-                                {lng === 'fr' ? 'Suivez-moi' : 'Follow me'}
+                        <div className="card-body p-4">
+                            <h3 className="card-title text-lg mb-2">
+                                {t('footer.follow_me')}
                             </h3>
-                            <p className="mb-4">
-                                {lng === 'fr'
-                                    ? 'Retrouvez-moi sur les réseaux sociaux pour suivre mes projets et actualités.'
-                                    : 'Find me on social media to follow my projects and news.'}
+                            <p className="mb-3 text-sm">
+                                {t('footer.social_media')}
                             </p>
 
-                            <div className="flex gap-4 mt-6">
+                            <div className="flex gap-3 mt-4">
                                 <a
                                     href="https://github.com/mhommet"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn btn-outline"
+                                    className="btn btn-outline btn-sm"
                                 >
-                                    <FaGithub className="mr-2" size={20} /> GitHub
+                                    <FaGithub className="mr-1" size={16} /> GitHub
                                 </a>
                                 <a
                                     href="https://linkedin.com/in/milan-hommet-840414315"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn btn-outline"
+                                    className="btn btn-outline btn-sm"
                                 >
-                                    <FaLinkedin className="mr-2" size={20} /> LinkedIn
+                                    <FaLinkedin className="mr-1" size={16} /> LinkedIn
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="text-center mt-8">
-                    <p>
-                        &copy; {currentYear} Milan Hommet |{' '}
-                        {lng === 'fr'
-                            ? 'Développeur Fullstack Freelance'
-                            : 'Freelance Fullstack Developer'}
+                <div className="text-center mt-6">
+                    <p className="text-sm">
+                        &copy; {currentYear} Milan Hommet | {t('footer.copyright')} | {t('footer.freelance_dev')}
                     </p>
                 </div>
             </div>

@@ -13,33 +13,37 @@ export default function ThemeToggle({ lng }: ThemeToggleProps): React.ReactEleme
     // Initialiser avec null pour indiquer que le thème n'est pas encore déterminé
     const [theme, setTheme] = useState<'light' | 'dark' | null>(null);
 
-    // Initialiser le thème au chargement
-    useEffect(() => {
-        // Vérifier le thème actuel
-        const getCurrentTheme = (): 'light' | 'dark' => {
-            // Vérifier d'abord le data-theme sur html
-            const dataTheme = document.documentElement.getAttribute('data-theme') as 'light' | 'dark' | null;
-            if (dataTheme === 'light' || dataTheme === 'dark') {
-                return dataTheme;
-            }
-            
-            // Vérifier localStorage
-            const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-            if (savedTheme === 'light' || savedTheme === 'dark') {
-                return savedTheme;
-            }
-            
-            // Vérifier les préférences système
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                return 'dark';
-            }
-            
-            // Par défaut: thème clair
-            return 'light';
-        };
+    // Fonction pour récupérer le thème actuel
+    const getCurrentTheme = (): 'light' | 'dark' => {
+        // Vérifier d'abord le data-theme sur html
+        const dataTheme = document.documentElement.getAttribute('data-theme') as 'light' | 'dark' | null;
+        if (dataTheme === 'light' || dataTheme === 'dark') {
+            return dataTheme;
+        }
         
+        // Vérifier localStorage
+        const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+        if (savedTheme === 'light' || savedTheme === 'dark') {
+            return savedTheme;
+        }
+        
+        // Vérifier les préférences système
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+        }
+        
+        // Par défaut: thème clair
+        return 'light';
+    };
+
+    // Initialiser le thème au chargement et quand la langue change
+    useEffect(() => {
         // Définir l'état avec le thème actuel
-        setTheme(getCurrentTheme());
+        const currentTheme = getCurrentTheme();
+        setTheme(currentTheme);
+        
+        // S'assurer que le thème de l'interface correspond bien au thème stocké
+        applyTheme(currentTheme);
         
         // Écouter les changements de préférence système
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -54,7 +58,7 @@ export default function ThemeToggle({ lng }: ThemeToggleProps): React.ReactEleme
         
         mediaQuery.addEventListener('change', handleChange);
         return () => mediaQuery.removeEventListener('change', handleChange);
-    }, []);
+    }, [lng]); // Ajouter lng comme dépendance pour que l'effet se réexécute quand la langue change
 
     // Applique le thème au document
     const applyTheme = (newTheme: 'light' | 'dark'): void => {

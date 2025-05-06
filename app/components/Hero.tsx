@@ -36,7 +36,7 @@ export default function Hero({ lng }: HeroProps): React.ReactElement {
                 </div>
                 <div className="max-w-xl">
                     <h1 className="text-5xl font-bold">Milan Hommet</h1>
-                    <div className="badge badge-primary my-2">Développeur Fullstack Freelance</div>
+                    <div className="badge badge-primary my-2">{t('hero.job_title')}</div>
                     <p className="py-4">
                         {lng === 'fr'
                             ? "Développeur Full Stack diplômé d'un Bac+5, avec trois ans d'expérience en alternance. Je propose aujourd'hui mes services en freelance pour vos projets web et mobiles."

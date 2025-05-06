@@ -2,13 +2,14 @@ import '../globals.css';
 import { Inter } from 'next/font/google';
 import { languages, fallbackLng } from '../i18n/settings';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { Metadata } from 'next';
 import React, { ReactNode } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'Milan Hommet | Développeur Fullstack',
+    title: 'Milan Hommet',
     description:
         'Portfolio de Milan Hommet, développeur fullstack freelance. Découvrez mes services, mes compétences et mes réalisations.',
     keywords: [
@@ -78,14 +79,12 @@ export default async function RootLayout({
                   // Si le navigateur préfère le thème sombre, l'appliquer
                   document.documentElement.setAttribute('data-theme', 'dark');
                   document.body && document.body.setAttribute('data-theme', 'dark');
-                  // Et l'enregistrer dans localStorage pour les prochaines visites
-                  localStorage.setItem('theme', 'dark');
+                  // Ne pas sauvegarder dans localStorage pour permettre des changements fluides
                 } else {
                   // Sinon, utiliser le thème clair par défaut
                   document.documentElement.setAttribute('data-theme', 'light');
                   document.body && document.body.setAttribute('data-theme', 'light');
-                  // Et l'enregistrer dans localStorage pour les prochaines visites
-                  localStorage.setItem('theme', 'light');
+                  // Ne pas sauvegarder dans localStorage pour permettre des changements fluides
                 }
                 
                 // Ajouter un écouteur pour les changements de préférence système
@@ -95,7 +94,6 @@ export default async function RootLayout({
                     var newTheme = e.matches ? 'dark' : 'light';
                     document.documentElement.setAttribute('data-theme', newTheme);
                     document.body && document.body.setAttribute('data-theme', newTheme);
-                    localStorage.setItem('theme', newTheme);
                   }
                 });
               } catch (e) {
@@ -109,6 +107,7 @@ export default async function RootLayout({
             <body className={`${inter.className} theme-transition`}>
                 <Navbar lng={language} />
                 <main>{children}</main>
+                <Footer lng={language} />
             </body>
         </html>
     );

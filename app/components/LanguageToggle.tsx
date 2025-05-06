@@ -1,8 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { useTranslation } from '../i18n/client';
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
 interface LanguageToggleProps {
     lng: string;
@@ -10,6 +10,17 @@ interface LanguageToggleProps {
 
 export default function LanguageToggle({ lng }: LanguageToggleProps): React.ReactElement {
     const { t } = useTranslation(lng);
+    const router = useRouter();
+
+    // Fonction pour changer de langue tout en préservant le thème
+    const changeLanguage = (newLang: string) => {
+        // Stocker explicitement le thème actuel pour s'assurer qu'il soit préservé
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        localStorage.setItem('theme', currentTheme);
+        
+        // Naviguer vers la nouvelle langue
+        router.push(`/${newLang}`);
+    };
 
     return (
         <div className="dropdown dropdown-end">
@@ -35,14 +46,20 @@ export default function LanguageToggle({ lng }: LanguageToggleProps): React.Reac
                 className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
             >
                 <li>
-                    <Link href={`/fr`} className={lng === 'fr' ? 'active' : ''}>
+                    <button 
+                        onClick={() => changeLanguage('fr')} 
+                        className={lng === 'fr' ? 'active' : ''}
+                    >
                         {t('language.fr')}
-                    </Link>
+                    </button>
                 </li>
                 <li>
-                    <Link href={`/en`} className={lng === 'en' ? 'active' : ''}>
+                    <button 
+                        onClick={() => changeLanguage('en')} 
+                        className={lng === 'en' ? 'active' : ''}
+                    >
                         {t('language.en')}
-                    </Link>
+                    </button>
                 </li>
             </ul>
         </div>

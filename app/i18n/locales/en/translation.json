@@ -6,11 +6,13 @@
         "experience": "Professional Experience",
         "education": "Education",
         "projects": "Projects",
-        "realisations": "Portfolio"
+        "realisations": "Portfolio",
+        "contact": "Contact"
     },
     "hero": {
         "greeting": "I'm Milan, a fullstack developer based in France.",
-        "description": "Full-Stack Developer with a Master's degree (Bac+5) and three years of work-study experience at Téïcée. I now offer my services as a freelance developer for your web and mobile projects."
+        "description": "Full-Stack Developer with a Master's degree (Bac+5) and three years of work-study experience at Téïcée. I now offer my services as a freelance developer for your web and mobile projects.",
+        "job_title": "Freelance Fullstack Developer"
     },
     "education": {
         "title": "Education",
@@ -58,5 +60,14 @@
     "language": {
         "fr": "French",
         "en": "English"
+    },
+    "footer": {
+        "work_together": "Let's work together",
+        "project_inquiry": "Do you have a project? Feel free to contact me to discuss your needs and see how I can help.",
+        "follow_me": "Follow me",
+        "social_media": "Find me on social media to follow my projects and news.",
+        "send_message": "Send a message",
+        "copyright": "All rights reserved",
+        "freelance_dev": "Freelance Fullstack Developer"
     }
 }
