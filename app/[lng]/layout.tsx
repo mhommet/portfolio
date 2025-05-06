@@ -53,7 +53,7 @@ export default async function RootLayout({
     const language = lng || fallbackLng;
     
     return (
-        <html lang={language}>
+        <html lang={language} className="theme-transition">
             <head>
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -65,14 +65,39 @@ export default async function RootLayout({
                         __html: `
             (function() {
               try {
+                // Vérifie si un thème a été sauvegardé dans le localStorage
                 var savedTheme = localStorage.getItem('theme');
+                
+                // Si un thème a été sauvegardé, l'utiliser
                 if (savedTheme) {
                   document.documentElement.setAttribute('data-theme', savedTheme);
-                  document.body ? document.body.setAttribute('data-theme', savedTheme) : null;
-                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                  document.body && document.body.setAttribute('data-theme', savedTheme);
+                } 
+                // Sinon, vérifier les préférences système (thème sombre/clair)
+                else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                  // Si le navigateur préfère le thème sombre, l'appliquer
                   document.documentElement.setAttribute('data-theme', 'dark');
-                  document.body ? document.body.setAttribute('data-theme', 'dark') : null;
+                  document.body && document.body.setAttribute('data-theme', 'dark');
+                  // Et l'enregistrer dans localStorage pour les prochaines visites
+                  localStorage.setItem('theme', 'dark');
+                } else {
+                  // Sinon, utiliser le thème clair par défaut
+                  document.documentElement.setAttribute('data-theme', 'light');
+                  document.body && document.body.setAttribute('data-theme', 'light');
+                  // Et l'enregistrer dans localStorage pour les prochaines visites
+                  localStorage.setItem('theme', 'light');
                 }
+                
+                // Ajouter un écouteur pour les changements de préférence système
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+                  // Ne pas modifier si l'utilisateur a déjà un thème sauvegardé (choix manuel)
+                  if (!localStorage.getItem('theme')) {
+                    var newTheme = e.matches ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    document.body && document.body.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                  }
+                });
               } catch (e) {
                 console.error('Erreur lors de l\'initialisation du thème:', e);
               }

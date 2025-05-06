@@ -172,47 +172,13 @@ body {
   animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Image de profil avec bordure violette */
+/* Image de profil avec bordure qui change avec le thème */
 .profile-image {
   border-radius: 50%;
-  border: 5px solid var(--cat-mauve);
+  border: 5px solid var(--color-primary);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.3s ease;
 }
-
-[data-theme="dark"] .profile-image {
-  border: 5px solid var(--cat-mauve);
-}
-
-/* Classes d'utilitaires pour les couleurs Catppuccin */
-.bg-rosewater { background-color: var(--cat-rosewater); }
-.bg-flamingo { background-color: var(--cat-flamingo); }
-.bg-pink { background-color: var(--cat-pink); }
-.bg-mauve { background-color: var(--cat-mauve); }
-.bg-red { background-color: var(--cat-red); }
-.bg-maroon { background-color: var(--cat-maroon); }
-.bg-peach { background-color: var(--cat-peach); }
-.bg-yellow { background-color: var(--cat-yellow); }
-.bg-green { background-color: var(--cat-green); }
-.bg-teal { background-color: var(--cat-teal); }
-.bg-sky { background-color: var(--cat-sky); }
-.bg-sapphire { background-color: var(--cat-sapphire); }
-.bg-blue { background-color: var(--cat-blue); }
-.bg-lavender { background-color: var(--cat-lavender); }
-
-.text-rosewater { color: var(--cat-rosewater); }
-.text-flamingo { color: var(--cat-flamingo); }
-.text-pink { color: var(--cat-pink); }
-.text-mauve { color: var(--cat-mauve); }
-.text-red { color: var(--cat-red); }
-.text-maroon { color: var(--cat-maroon); }
-.text-peach { color: var(--cat-peach); }
-.text-yellow { color: var(--cat-yellow); }
-.text-green { color: var(--cat-green); }
-.text-teal { color: var(--cat-teal); }
-.text-sky { color: var(--cat-sky); }
-.text-sapphire { color: var(--cat-sapphire); }
-.text-blue { color: var(--cat-blue); }
-.text-lavender { color: var(--cat-lavender); }
 
 /* Variables spécifiques pour chaque thème */
 [data-theme="light"] {
@@ -248,6 +214,37 @@ body {
   --cat-blue: #89b4fa;
   --cat-lavender: #b4befe;
 }
+
+/* Classes d'utilitaires pour les couleurs Catppuccin */
+.bg-rosewater { background-color: var(--cat-rosewater); }
+.bg-flamingo { background-color: var(--cat-flamingo); }
+.bg-pink { background-color: var(--cat-pink); }
+.bg-mauve { background-color: var(--cat-mauve); }
+.bg-red { background-color: var(--cat-red); }
+.bg-maroon { background-color: var(--cat-maroon); }
+.bg-peach { background-color: var(--cat-peach); }
+.bg-yellow { background-color: var(--cat-yellow); }
+.bg-green { background-color: var(--cat-green); }
+.bg-teal { background-color: var(--cat-teal); }
+.bg-sky { background-color: var(--cat-sky); }
+.bg-sapphire { background-color: var(--cat-sapphire); }
+.bg-blue { background-color: var(--cat-blue); }
+.bg-lavender { background-color: var(--cat-lavender); }
+
+.text-rosewater { color: var(--cat-rosewater); }
+.text-flamingo { color: var(--cat-flamingo); }
+.text-pink { color: var(--cat-pink); }
+.text-mauve { color: var(--cat-mauve); }
+.text-red { color: var(--cat-red); }
+.text-maroon { color: var(--cat-maroon); }
+.text-peach { color: var(--cat-peach); }
+.text-yellow { color: var(--cat-yellow); }
+.text-green { color: var(--cat-green); }
+.text-teal { color: var(--cat-teal); }
+.text-sky { color: var(--cat-sky); }
+.text-sapphire { color: var(--cat-sapphire); }
+.text-blue { color: var(--cat-blue); }
+.text-lavender { color: var(--cat-lavender); }
 
 .theme-transition {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;

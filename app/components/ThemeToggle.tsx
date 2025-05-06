@@ -10,75 +10,86 @@ interface ThemeToggleProps {
 
 export default function ThemeToggle({ lng }: ThemeToggleProps): React.ReactElement {
     const { t } = useTranslation(lng);
-    const [theme, setTheme] = useState<'light' | 'dark'>('light');
+    // Initialiser avec null pour indiquer que le thème n'est pas encore déterminé
+    const [theme, setTheme] = useState<'light' | 'dark' | null>(null);
 
     // Initialiser le thème au chargement
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            // Récupérer le thème enregistré ou utiliser une détection basée sur les préférences systèmes
-            const savedTheme =
-                (localStorage.getItem('theme') as 'light' | 'dark' | null) ||
-                (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-                    ? 'dark'
-                    : 'light');
-
-            setTheme(savedTheme);
-
-            // Application du thème à tous les éléments nécessaires
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            document.body.setAttribute('data-theme', savedTheme);
-
-            console.log('Thème initialisé:', savedTheme);
-            console.log('HTML data-theme:', document.documentElement.getAttribute('data-theme'));
-            console.log('Body data-theme:', document.body.getAttribute('data-theme'));
-        }
+        // Vérifier le thème actuel
+        const getCurrentTheme = (): 'light' | 'dark' => {
+            // Vérifier d'abord le data-theme sur html
+            const dataTheme = document.documentElement.getAttribute('data-theme') as 'light' | 'dark' | null;
+            if (dataTheme === 'light' || dataTheme === 'dark') {
+                return dataTheme;
+            }
+            
+            // Vérifier localStorage
+            const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+            if (savedTheme === 'light' || savedTheme === 'dark') {
+                return savedTheme;
+            }
+            
+            // Vérifier les préférences système
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                return 'dark';
+            }
+            
+            // Par défaut: thème clair
+            return 'light';
+        };
+        
+        // Définir l'état avec le thème actuel
+        setTheme(getCurrentTheme());
+        
+        // Écouter les changements de préférence système
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        const handleChange = () => {
+            // Ne mettre à jour que si l'utilisateur n'a pas explicitement choisi un thème
+            if (!localStorage.getItem('theme')) {
+                const newTheme = mediaQuery.matches ? 'dark' : 'light';
+                setTheme(newTheme);
+                applyTheme(newTheme);
+            }
+        };
+        
+        mediaQuery.addEventListener('change', handleChange);
+        return () => mediaQuery.removeEventListener('change', handleChange);
     }, []);
 
-    const toggleTheme = (): void => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
+    // Applique le thème au document
+    const applyTheme = (newTheme: 'light' | 'dark'): void => {
+        document.documentElement.setAttribute('data-theme', newTheme);
+        if (document.body) document.body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    };
 
+    const toggleTheme = (): void => {
+        // Vérifier si le thème est défini
+        if (theme === null) return;
+        
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        
         // Mise à jour de l'état
         setTheme(newTheme);
-
-        // Enregistrement dans localStorage
-        localStorage.setItem('theme', newTheme);
-
-        // Application du thème à tous les éléments nécessaires
-        document.documentElement.setAttribute('data-theme', newTheme);
-        document.body.setAttribute('data-theme', newTheme);
-
-        // Forcer un rafraîchissement des styles
-        document.body.classList.remove('theme-transition');
-        // Force browser reflow
-        void document.body.offsetHeight;
-        document.body.classList.add('theme-transition');
-
-        console.log(
-            'HTML data-theme après changement:',
-            document.documentElement.getAttribute('data-theme')
-        );
-        console.log('Body data-theme après changement:', document.body.getAttribute('data-theme'));
+        
+        // Appliquer le thème
+        applyTheme(newTheme);
     };
 
     const getThemeIcon = (): React.ReactElement | null => {
+        // Si le thème n'est pas encore déterminé, ne rien afficher
+        if (theme === null) return null;
+        
         switch (theme) {
             case 'light':
                 return (
-                    <svg
-                        className="fill-current w-6 h-6"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                    >
+                    <svg className="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
                     </svg>
                 );
             case 'dark':
                 return (
-                    <svg
-                        className="fill-current w-6 h-6"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                    >
+                    <svg className="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
                     </svg>
                 );
@@ -89,11 +100,11 @@ export default function ThemeToggle({ lng }: ThemeToggleProps): React.ReactEleme
 
     return (
         <div className="flex items-center">
-            <button
+            <button 
                 onClick={toggleTheme}
                 className="btn btn-ghost btn-circle"
                 aria-label={t('theme.toggle')}
-                title={t('theme.toggle')}
+                title={theme ? t(theme === 'light' ? 'theme.dark' : 'theme.light') : ''}
             >
                 {getThemeIcon()}
             </button>
