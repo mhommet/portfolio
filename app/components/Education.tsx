@@ -22,32 +22,42 @@ export default function Education({ lng }: EducationProps): React.ReactElement {
 
     const educations: Education[] = [
         {
-            degree: 'MBA Développeur Fullstack',
+            degree: lng === 'fr' ? 'MBA Développeur Fullstack' : 'MBA in Full-Stack Development',
             school: 'MyDigitalSchool',
-            type: 'Alternance',
-            period: 'Septembre 2023 - Juillet 2025',
+            type: lng === 'fr' ? 'Alternance' : 'Work-Study Program',
+            period: lng === 'fr' ? 'Septembre 2023 - Juillet 2025' : 'September 2023 - July 2025',
             location: 'Caen, France',
             skills: [
-                'Gestion de projet',
-                'Développement web, mobile et embarqué',
+                lng === 'fr' ? 'Gestion de projet' : 'Project Management',
+                lng === 'fr' ? 'Développement web, mobile et embarqué' : 'Web, Mobile, and Embedded development',
                 'Flutter, NextJS, TypeScript, Python, Arduino, React',
             ],
         },
         {
-            degree: "Bachelor Concepteur développeur d'applications",
+            degree: lng === 'fr' 
+                ? "Bachelor Conception et Développement d'Applications" 
+                : 'Bachelor in Application Design and Development',
             school: 'MyDigitalSchool',
-            type: 'Alternance',
-            period: 'Septembre 2022 - Juillet 2023',
+            type: lng === 'fr' ? 'Alternance' : 'Work-Study Program',
+            period: lng === 'fr' ? 'Septembre 2022 - Juillet 2023' : 'September 2022 - July 2023',
             location: 'Caen, France',
-            skills: ['Développement web et mobile', 'Flutter, Python, Javascript, CICD Gitlab'],
+            skills: [
+                lng === 'fr' ? 'Développement web et mobile' : 'Web and mobile development',
+                'Flutter, Python, Javascript, CICD Gitlab'
+            ],
         },
         {
-            degree: 'BTS SIO',
-            school: 'Etablissement Saint Adjutor',
+            degree: lng === 'fr' 
+                ? 'BTS SIO - SLAM' 
+                : 'BTEC Higher National Diploma in IT Services for Organizations (BTS SIO - SLAM)',
+            school: lng === 'fr' ? 'Etablissement Saint Adjutor' : 'Etablissement Saint Adjutor',
             type: '',
-            period: 'Septembre 2020 - Juillet 2022',
+            period: lng === 'fr' ? 'Septembre 2020 - Juillet 2022' : 'September 2020 - July 2022',
             location: 'Vernon, France',
-            skills: ['Développement web et logiciel', 'Symfony, React, Ionic, C#, MySQL'],
+            skills: [
+                lng === 'fr' ? 'Développement web et logiciel' : 'Web and software development',
+                'Symfony, React, Ionic, C#, MySQL'
+            ],
         },
     ];
 
@@ -88,7 +98,9 @@ export default function Education({ lng }: EducationProps): React.ReactElement {
                                         </div>
 
                                         <div className="mt-4">
-                                            <h4 className="font-bold mb-2">Programme :</h4>
+                                            <h4 className="font-bold mb-2">
+                                                {lng === 'fr' ? 'Programme :' : 'Program:'}
+                                            </h4>
                                             <ul className="space-y-1">
                                                 {edu.skills.map((skill, idx) => (
                                                     <li key={idx} className="flex items-start">

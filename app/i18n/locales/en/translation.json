@@ -3,24 +3,24 @@
         "home": "Home",
         "about": "About",
         "skills": "Skills",
-        "experience": "Experience",
+        "experience": "Professional Experience",
         "education": "Education",
         "projects": "Projects",
         "realisations": "Portfolio"
     },
     "hero": {
         "greeting": "I'm Milan, a fullstack developer based in France.",
-        "description": "I'm currently pursuing an MBA in development and project management. I enjoy learning new languages and frameworks in my free time. I have an apprenticeship contract with Téïcée as a fullstack developer."
+        "description": "Full-Stack Developer with a Master's degree (Bac+5) and three years of work-study experience at Téïcée. I now offer my services as a freelance developer for your web and mobile projects."
     },
     "education": {
         "title": "Education",
-        "mba": "2023 - 2025: MBA - Fullstack Developer",
-        "bachelor": "2022 - 2023: BACHELOR - Web Developer",
-        "bts": "2020 - 2022: BTS SIO - Web and Software Development"
+        "mba": "Sept. 2023 - Jul. 2025: MBA in Full-Stack Development – Work-Study Program",
+        "bachelor": "Sept. 2022 - Jul. 2023: Bachelor in Application Design and Development – Work-Study Program",
+        "bts": "Sept. 2020 - Jul. 2022: BTEC Higher National Diploma in IT Services for Organizations"
     },
     "experience": {
-        "title": "Experience",
-        "current": "2022 - present: Fullstack Developer at Téïcée"
+        "title": "Professional Experience",
+        "current": "Jul. 2022 - Jul. 2025: Fullstack Developer at Téïcée"
     },
     "skills": {
         "title": "Skills",

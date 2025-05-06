@@ -21,22 +21,29 @@ export default function Experience({ lng }: ExperienceProps): React.ReactElement
 
     const experiences: ExperienceItem[] = [
         {
-            title: 'Développeur Fullstack - Téïcée',
-            period: 'Juillet 2022 - Juillet 2025',
+            title: lng === 'fr' ? 'Développeur Fullstack - Téïcée' : 'Fullstack Developer - Téïcée',
+            period: lng === 'fr' ? 'Juillet 2022 - Juillet 2025' : 'July 2022 - July 2025',
             location: 'Caen, France',
             tasks: [
-                'Développement Fullstack',
-                'Gestion de projet SCRUM',
-                'Réalisation de projets clients en VueJS, Electron, React et Symfony',
+                lng === 'fr' ? 'Développement Fullstack' : 'Fullstack development',
+                lng === 'fr' ? 'Gestion de projet SCRUM' : 'SCRUM project management',
+                lng === 'fr' 
+                    ? 'Réalisation de projets clients en VueJS, Electron, React et Symfony'
+                    : 'Client Project Delivery using VueJS, Electron, React, and Symfony',
             ],
             skills: ['VueJS', 'Electron', 'React', 'Symfony', 'JavaScript', 'TypeScript', 'PHP'],
             website: null,
         },
         {
-            title: 'Stage BTS SIO - Lycée St Agnès',
-            period: 'Janvier 2022 - Février 2022',
-            location: 'Vernon, France',
-            tasks: ['Développement React', 'MySQL'],
+            title: lng === 'fr' 
+                ? 'Stage BTS SIO - Lycée St Agnès' 
+                : 'Internship - BTEC Higher National Diploma - Lycée St Agnès (France)',
+            period: lng === 'fr' ? 'Janvier 2022 - Février 2022' : 'January 2022 - February 2022',
+            location: lng === 'fr' ? 'Vernon, France' : 'Vernon, France',
+            tasks: [
+                lng === 'fr' ? 'Développement React' : 'React Development', 
+                'MySQL'
+            ],
             skills: ['React', 'MySQL'],
             website: null,
         },
@@ -67,7 +74,9 @@ export default function Experience({ lng }: ExperienceProps): React.ReactElement
                                         </div>
 
                                         <div className="mt-4">
-                                            <h4 className="font-bold mb-2">Missions :</h4>
+                                            <h4 className="font-bold mb-2">
+                                                {lng === 'fr' ? 'Missions :' : 'Missions:'}
+                                            </h4>
                                             <ul className="space-y-1">
                                                 {exp.tasks.map((task, idx) => (
                                                     <li key={idx} className="flex items-start">
@@ -82,7 +91,9 @@ export default function Experience({ lng }: ExperienceProps): React.ReactElement
                                         </div>
 
                                         <div className="mt-4">
-                                            <h4 className="font-bold mb-2">Compétences :</h4>
+                                            <h4 className="font-bold mb-2">
+                                                {lng === 'fr' ? 'Compétences :' : 'Skills:'}
+                                            </h4>
                                             <div className="flex flex-wrap gap-2">
                                                 {exp.skills.map((skill, idx) => (
                                                     <div key={idx} className="badge badge-primary">
@@ -102,7 +113,7 @@ export default function Experience({ lng }: ExperienceProps): React.ReactElement
                                             rel="noopener noreferrer"
                                             className="btn btn-primary btn-sm"
                                         >
-                                            Visiter le site
+                                            {lng === 'fr' ? 'Visiter le site' : 'Visit website'}
                                         </a>
                                     </div>
                                 )}

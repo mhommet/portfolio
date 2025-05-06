@@ -3,24 +3,24 @@
         "home": "Accueil",
         "about": "À propos",
         "skills": "Compétences",
-        "experience": "Expériences",
+        "experience": "Expériences Professionnelles",
         "education": "Formation",
         "projects": "Projets",
         "realisations": "Réalisations"
     },
     "hero": {
         "greeting": "Je suis Milan, un développeur fullstack basé en France.",
-        "description": "Je poursuis actuellement un MBA en développement et management de projets. J'aime apprendre de nouveaux langages et frameworks pendant mon temps libre. J'ai un contrat d'alternance chez Téïcée en tant que développeur fullstack."
+        "description": "Développeur Full-Stack diplômé d'un Bac+5, avec trois ans d'expérience en alternance chez Téïcée. Je propose aujourd'hui mes services en freelance pour vos projets web et mobiles."
     },
     "education": {
         "title": "Formation",
-        "mba": "2023 - 2025 : MBA - Développeur Fullstack",
-        "bachelor": "2022 - 2023 : BACHELOR - Développeur Web",
-        "bts": "2020 - 2022 : BTS SIO - Développement web et logiciel"
+        "mba": "Sept. 2023 - Juil. 2025 : MBA Développeur Fullstack – Alternance",
+        "bachelor": "Sept. 2022 - Juil. 2023 : Bachelor Conception et Développement d'Applications – Alternance",
+        "bts": "Sept. 2020 - Juil. 2022 : BTS SIO SLAM - Services Informatiques aux Organisations"
     },
     "experience": {
-        "title": "Expériences",
-        "current": "2022 - aujourd'hui : Développeur Fullstack chez Téïcée"
+        "title": "Expériences Professionnelles",
+        "current": "Juil. 2022 - Juil. 2025 : Développeur Fullstack - Téïcée"
     },
     "skills": {
         "title": "Compétences",
