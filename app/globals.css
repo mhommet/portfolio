@@ -1,5 +1,109 @@
-@import "tailwindcss/preflight";
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  /* Couleurs Catppuccin Latte */
+  --color-base-100: #eff1f5; /* base */
+  --color-base-200: #e6e9ef; /* mantle */
+  --color-base-300: #dce0e8; /* crust */
+  --color-base-content: #4c4f69; /* text */
+  
+  --color-primary: #8839ef; /* mauve */
+  --color-primary-content: #ffffff;
+  
+  --color-secondary: #209fb5; /* sapphire */
+  --color-secondary-content: #ffffff;
+  
+  --color-accent: #ea76cb; /* pink */
+  --color-accent-content: #ffffff;
+  
+  --color-neutral: #4c4f69; /* text */
+  --color-neutral-content: #ffffff;
+  
+  --color-info: #1e66f5; /* blue */
+  --color-info-content: #ffffff;
+  
+  --color-success: #40a02b; /* green */
+  --color-success-content: #ffffff;
+  
+  --color-warning: #df8e1d; /* yellow */
+  --color-warning-content: #ffffff;
+  
+  --color-error: #d20f39; /* red */
+  --color-error-content: #ffffff;
+
+  /* border radius */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+
+  /* base sizes */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  /* border size */
+  --border: 1px;
+
+  /* effects */
+  --depth: 1;
+  --noise: 0;
+}
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+
+  /* Couleurs Catppuccin Mocha */
+  --color-base-100: #1e1e2e; /* base */
+  --color-base-200: #181825; /* mantle */
+  --color-base-300: #11111b; /* crust */
+  --color-base-content: #cdd6f4; /* text */
+  
+  --color-primary: #cba6f7; /* mauve */
+  --color-primary-content: #11111b; /* crust */
+  
+  --color-secondary: #74c7ec; /* sapphire */
+  --color-secondary-content: #11111b; /* crust */
+  
+  --color-accent: #f5c2e7; /* pink */
+  --color-accent-content: #11111b; /* crust */
+  
+  --color-neutral: #cdd6f4; /* text */
+  --color-neutral-content: #11111b; /* crust */
+  
+  --color-info: #89b4fa; /* blue */
+  --color-info-content: #11111b; /* crust */
+  
+  --color-success: #a6e3a1; /* green */
+  --color-success-content: #11111b; /* crust */
+  
+  --color-warning: #f9e2af; /* yellow */
+  --color-warning-content: #11111b; /* crust */
+  
+  --color-error: #f38ba8; /* red */
+  --color-error-content: #11111b; /* crust */
+
+  /* border radius */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+
+  /* base sizes */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  /* border size */
+  --border: 1px;
+
+  /* effects */
+  --depth: 1;
+  --noise: 0;
+}
 
 /* Classes nommées pour les animations */
 .fade-in {
@@ -13,52 +117,25 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: white;
-  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: hsl(var(--b1));
 }
 
-/* Style personnalisé */
-.theme-button {
-  background-color: #0071e3;
-  color: white;
-  border-radius: 980px;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  transition: all 0.2s ease;
-}
-
-.theme-button:hover {
-  background-color: #147ce5;
-}
-
-.theme-card {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.theme-card:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-.hero-title {
-  font-size: 56px;
-  line-height: 1.07143;
-  font-weight: 600;
-  letter-spacing: -0.005em;
-}
-
-.hero-subtitle {
-  font-size: 28px;
-  line-height: 1.1;
-  font-weight: 400;
-  letter-spacing: 0.004em;
+/* Utilitaires pour les couleurs Catppuccin */
+:root {
+  --cat-rosewater: var(--rosewater);
+  --cat-flamingo: var(--flamingo);
+  --cat-pink: var(--pink);
+  --cat-mauve: var(--mauve);
+  --cat-red: var(--red);
+  --cat-maroon: var(--maroon);
+  --cat-peach: var(--peach);
+  --cat-yellow: var(--yellow);
+  --cat-green: var(--green);
+  --cat-teal: var(--teal);
+  --cat-sky: var(--sky);
+  --cat-sapphire: var(--sapphire);
+  --cat-blue: var(--blue);
+  --cat-lavender: var(--lavender);
 }
 
 .timeline-item {
@@ -73,8 +150,8 @@ body {
 
 /* Style pour les items actifs */
 .active {
-  background-color: #0071e3;
-  color: white;
+  background-color: hsl(var(--p));
+  color: hsl(var(--pc));
 }
 
 /* Animations */
@@ -83,17 +160,8 @@ body {
   to { opacity: 1; }
 }
 
-@keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-.slide-up {
-  animation: slideUp 0.7s ease-out forwards;
-}
-
 .card {
-  background-color: white;
+  background-color: hsl(var(--b1));
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
   border-radius: 0.5rem;
   padding: 1.5rem;
@@ -102,5 +170,86 @@ body {
 
 .hero-content {
   animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Image de profil avec bordure violette */
+.profile-image {
+  border-radius: 50%;
+  border: 5px solid var(--cat-mauve);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .profile-image {
+  border: 5px solid var(--cat-mauve);
+}
+
+/* Classes d'utilitaires pour les couleurs Catppuccin */
+.bg-rosewater { background-color: var(--cat-rosewater); }
+.bg-flamingo { background-color: var(--cat-flamingo); }
+.bg-pink { background-color: var(--cat-pink); }
+.bg-mauve { background-color: var(--cat-mauve); }
+.bg-red { background-color: var(--cat-red); }
+.bg-maroon { background-color: var(--cat-maroon); }
+.bg-peach { background-color: var(--cat-peach); }
+.bg-yellow { background-color: var(--cat-yellow); }
+.bg-green { background-color: var(--cat-green); }
+.bg-teal { background-color: var(--cat-teal); }
+.bg-sky { background-color: var(--cat-sky); }
+.bg-sapphire { background-color: var(--cat-sapphire); }
+.bg-blue { background-color: var(--cat-blue); }
+.bg-lavender { background-color: var(--cat-lavender); }
+
+.text-rosewater { color: var(--cat-rosewater); }
+.text-flamingo { color: var(--cat-flamingo); }
+.text-pink { color: var(--cat-pink); }
+.text-mauve { color: var(--cat-mauve); }
+.text-red { color: var(--cat-red); }
+.text-maroon { color: var(--cat-maroon); }
+.text-peach { color: var(--cat-peach); }
+.text-yellow { color: var(--cat-yellow); }
+.text-green { color: var(--cat-green); }
+.text-teal { color: var(--cat-teal); }
+.text-sky { color: var(--cat-sky); }
+.text-sapphire { color: var(--cat-sapphire); }
+.text-blue { color: var(--cat-blue); }
+.text-lavender { color: var(--cat-lavender); }
+
+/* Variables spécifiques pour chaque thème */
+[data-theme="light"] {
+  --cat-rosewater: #dc8a78;
+  --cat-flamingo: #dd7878;
+  --cat-pink: #ea76cb;
+  --cat-mauve: #8839ef;
+  --cat-red: #d20f39;
+  --cat-maroon: #e64553;
+  --cat-peach: #fe640b;
+  --cat-yellow: #df8e1d;
+  --cat-green: #40a02b;
+  --cat-teal: #179299;
+  --cat-sky: #04a5e5;
+  --cat-sapphire: #209fb5;
+  --cat-blue: #1e66f5;
+  --cat-lavender: #7287fd;
+}
+
+[data-theme="dark"] {
+  --cat-rosewater: #f5e0dc;
+  --cat-flamingo: #f2cdcd;
+  --cat-pink: #f5c2e7;
+  --cat-mauve: #cba6f7;
+  --cat-red: #f38ba8;
+  --cat-maroon: #eba0ac;
+  --cat-peach: #fab387;
+  --cat-yellow: #f9e2af;
+  --cat-green: #a6e3a1;
+  --cat-teal: #94e2d5;
+  --cat-sky: #89dceb;
+  --cat-sapphire: #74c7ec;
+  --cat-blue: #89b4fa;
+  --cat-lavender: #b4befe;
+}
+
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 

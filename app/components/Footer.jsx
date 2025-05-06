@@ -1,44 +1,97 @@
 'use client';
 
 import { useTranslation } from '../i18n/client';
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Footer({ lng }) {
   const { t } = useTranslation(lng);
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="footer footer-center p-10 bg-base-300 text-base-content" id="contact">
-      <div>
-        <div className="grid grid-flow-col gap-4">
-          <a 
-            href="https://github.com/mhommet" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn btn-ghost btn-circle text-xl"
-          >
-            <FaGithub />
-          </a>
-          <a 
-            href="https://linkedin.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn btn-ghost btn-circle text-xl"
-          >
-            <FaLinkedin />
-          </a>
-          <a 
-            href="mailto:milan.hommet@protonmail.com" 
-            className="btn btn-ghost btn-circle text-xl"
-          >
-            <FaEnvelope />
-          </a>
+    <footer className="p-10 bg-base-300 text-base-content" id="contact">
+      <div className="container mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12">{t('header.contact')}</h2>
+        
+        <div className="flex flex-col lg:flex-row gap-8 mb-12">
+          <div className="card bg-base-100 shadow-lg flex-1">
+            <div className="card-body">
+              <h3 className="card-title text-xl mb-4">
+                {lng === 'fr' ? "Travaillons ensemble" : "Let's work together"}
+              </h3>
+              <p className="mb-4">
+                {lng === 'fr' 
+                  ? "Vous avez un projet? N'hésitez pas à me contacter pour discuter de vos besoins et voir comment je peux vous aider."
+                  : "Do you have a project? Feel free to contact me to discuss your needs and see how I can help."}
+              </p>
+              
+              <div className="space-y-4 mt-6">
+                <div className="flex items-center gap-3">
+                  <FaEnvelope className="text-primary" size={20} />
+                  <a href="mailto:milan.hommet@protonmail.com" className="link link-hover">
+                    milan.hommet@protonmail.com
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <FaPhone className="text-primary" size={20} />
+                  <a href="tel:+33000000000" className="link link-hover">
+                    +33 00 00 00 00 00
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <FaMapMarkerAlt className="text-primary" size={20} />
+                  <span>Caen, France</span>
+                </div>
+              </div>
+              
+              <div className="card-actions justify-end mt-6">
+                <a 
+                  href="mailto:milan.hommet@protonmail.com" 
+                  className="btn btn-primary"
+                >
+                  {lng === 'fr' ? "Envoyer un message" : "Send a message"}
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="card bg-base-100 shadow-lg flex-1">
+            <div className="card-body">
+              <h3 className="card-title text-xl mb-4">
+                {lng === 'fr' ? "Suivez-moi" : "Follow me"}
+              </h3>
+              <p className="mb-4">
+                {lng === 'fr' 
+                  ? "Retrouvez-moi sur les réseaux sociaux pour suivre mes projets et actualités."
+                  : "Find me on social media to follow my projects and news."}
+              </p>
+              
+              <div className="flex gap-4 mt-6">
+                <a 
+                  href="https://github.com/mhommet" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn btn-outline"
+                >
+                  <FaGithub className="mr-2" size={20} /> GitHub
+                </a>
+                <a 
+                  href="https://linkedin.com/in/milan-hommet-840414315" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn btn-outline"
+                >
+                  <FaLinkedin className="mr-2" size={20} /> LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div>
-        <p className="text-center">
-          &copy; {currentYear} Milan Hommet | {t('header.contact')}: milan.hommet@protonmail.com
-        </p>
+        
+        <div className="text-center mt-8">
+          <p>
+            &copy; {currentYear} Milan Hommet | {lng === 'fr' ? "Développeur Fullstack Freelance" : "Freelance Fullstack Developer"}
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -24,11 +24,10 @@ export default function Navbar({ lng }) {
             <li><Link href={`/${lng}/#skills`}>{t('header.skills')}</Link></li>
             <li><Link href={`/${lng}/#experience`}>{t('header.experience')}</Link></li>
             <li><Link href={`/${lng}/#education`}>{t('header.education')}</Link></li>
-            <li><Link href={`/${lng}/#projects`}>{t('header.projects')}</Link></li>
-            <li><Link href={`/${lng}/#contact`}>{t('header.contact')}</Link></li>
+            <li><Link href={`/${lng}/#realisations`}>{t('header.realisations')}</Link></li>
           </ul>
         </div>
-        <Link href={`/${lng}`} className="btn btn-ghost normal-case text-xl">Milan Hommet</Link>
+        <Link href={`/${lng}`} className="btn btn-ghost normal-case text-xl hidden md:flex">Milan Hommet</Link>
       </div>
       
       <div className="navbar-center hidden lg:flex">
@@ -38,8 +37,7 @@ export default function Navbar({ lng }) {
           <li><Link href={`/${lng}/#skills`}>{t('header.skills')}</Link></li>
           <li><Link href={`/${lng}/#experience`}>{t('header.experience')}</Link></li>
           <li><Link href={`/${lng}/#education`}>{t('header.education')}</Link></li>
-          <li><Link href={`/${lng}/#projects`}>{t('header.projects')}</Link></li>
-          <li><Link href={`/${lng}/#contact`}>{t('header.contact')}</Link></li>
+          <li><Link href={`/${lng}/#realisations`}>{t('header.realisations')}</Link></li>
         </ul>
       </div>
       

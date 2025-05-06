@@ -12,77 +12,83 @@ export default function Skills({ lng }) {
         <h2 className="text-3xl font-bold text-center mb-12">{t('skills.title')}</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="card bg-base-200 shadow-xl">
-            <div className="card-body">
-              <div className="flex items-center mb-4">
-                <FaCode className="text-primary mr-3" size={28} />
+          <div className="card bg-base-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all border border-primary/20">
+            <div className="card-body p-5">
+              <div className="flex items-center mb-3">
+                <div className="bg-primary/10 p-3 rounded-full mr-3">
+                  <FaCode className="text-primary" size={24} />
+                </div>
                 <h3 className="card-title">{t('skills.languages').split(':')[0]}</h3>
               </div>
-              <p>{t('skills.languages').split(':')[1]}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <div className="badge badge-primary">Python</div>
-                <div className="badge badge-primary">JavaScript</div>
-                <div className="badge badge-primary">TypeScript</div>
-                <div className="badge badge-primary">Dart</div>
-                <div className="badge badge-primary">PHP</div>
-                <div className="badge badge-primary">C#</div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <div className="badge badge-primary badge-lg">Python</div>
+                <div className="badge badge-primary badge-lg">JavaScript</div>
+                <div className="badge badge-primary badge-lg">TypeScript</div>
+                <div className="badge badge-primary badge-lg">Dart</div>
+                <div className="badge badge-primary badge-lg">PHP</div>
+                <div className="badge badge-primary badge-lg">C#</div>
               </div>
             </div>
           </div>
           
-          <div className="card bg-base-200 shadow-xl">
-            <div className="card-body">
-              <div className="flex items-center mb-4">
-                <FaMobile className="text-primary mr-3" size={28} />
+          <div className="card bg-base-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all border border-primary/20">
+            <div className="card-body p-5">
+              <div className="flex items-center mb-3">
+                <div className="bg-primary/10 p-3 rounded-full mr-3">
+                  <FaMobile className="text-primary" size={24} />
+                </div>
                 <h3 className="card-title">{t('skills.mobile').split(':')[0]}</h3>
               </div>
-              <p>{t('skills.mobile').split(':')[1]}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <div className="badge badge-primary">Flutter</div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <div className="badge badge-primary badge-lg">Flutter</div>
+                <div className="badge badge-primary badge-lg">React Native</div>
               </div>
             </div>
           </div>
           
-          <div className="card bg-base-200 shadow-xl">
-            <div className="card-body">
-              <div className="flex items-center mb-4">
-                <FaDesktop className="text-primary mr-3" size={28} />
+          <div className="card bg-base-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all border border-primary/20">
+            <div className="card-body p-5">
+              <div className="flex items-center mb-3">
+                <div className="bg-primary/10 p-3 rounded-full mr-3">
+                  <FaDesktop className="text-primary" size={24} />
+                </div>
                 <h3 className="card-title">{t('skills.software').split(':')[0]}</h3>
               </div>
-              <p>{t('skills.software').split(':')[1]}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <div className="badge badge-primary">Electron</div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <div className="badge badge-primary badge-lg">Electron</div>
               </div>
             </div>
           </div>
           
-          <div className="card bg-base-200 shadow-xl">
-            <div className="card-body">
-              <div className="flex items-center mb-4">
-                <FaGlobe className="text-primary mr-3" size={28} />
+          <div className="card bg-base-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all border border-primary/20">
+            <div className="card-body p-5">
+              <div className="flex items-center mb-3">
+                <div className="bg-primary/10 p-3 rounded-full mr-3">
+                  <FaGlobe className="text-primary" size={24} />
+                </div>
                 <h3 className="card-title">{t('skills.web').split(':')[0]}</h3>
               </div>
-              <p>{t('skills.web').split(':')[1]}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <div className="badge badge-primary">React</div>
-                <div className="badge badge-primary">Symfony</div>
-                <div className="badge badge-primary">VueJS</div>
-                <div className="badge badge-primary">NextJS</div>
-                <div className="badge badge-primary">NodeJS</div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <div className="badge badge-primary badge-lg">React</div>
+                <div className="badge badge-primary badge-lg">Symfony</div>
+                <div className="badge badge-primary badge-lg">VueJS</div>
+                <div className="badge badge-primary badge-lg">NextJS</div>
+                <div className="badge badge-primary badge-lg">NodeJS</div>
               </div>
             </div>
           </div>
           
-          <div className="card bg-base-200 shadow-xl">
-            <div className="card-body">
-              <div className="flex items-center mb-4">
-                <FaDatabase className="text-primary mr-3" size={28} />
+          <div className="card bg-base-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all border border-primary/20">
+            <div className="card-body p-5">
+              <div className="flex items-center mb-3">
+                <div className="bg-primary/10 p-3 rounded-full mr-3">
+                  <FaDatabase className="text-primary" size={24} />
+                </div>
                 <h3 className="card-title">{t('skills.database').split(':')[0]}</h3>
               </div>
-              <p>{t('skills.database').split(':')[1]}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <div className="badge badge-primary">MySQL</div>
-                <div className="badge badge-primary">MongoDB</div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <div className="badge badge-primary badge-lg">MySQL</div>
+                <div className="badge badge-primary badge-lg">MongoDB</div>
               </div>
             </div>
           </div>

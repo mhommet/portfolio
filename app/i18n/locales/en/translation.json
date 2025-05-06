@@ -6,7 +6,7 @@
     "experience": "Experience",
     "education": "Education",
     "projects": "Projects",
-    "contact": "Contact"
+    "realisations": "Portfolio"
   },
   "hero": {
     "greeting": "I'm Milan, a fullstack developer based in France.",
@@ -41,13 +41,19 @@
     "esp32": "esp32_wifi - Ethical hacking ESP32 dev module",
     "pictionary": "Piction.ia.ry - School project of a pictionary with AI generated images with Stable Diffusion in Flutter"
   },
+  "realisations": {
+    "title": "Portfolio",
+    "dday": "DDay Normandy Experience - Tourism website about D-Day landings in Normandy"
+  },
   "cv": {
     "title": "Resume",
     "download": "Download my resume"
   },
   "theme": {
-    "light": "Light",
-    "dark": "Dark"
+    "light": "Latte",
+    "dark": "Mocha",
+    "toggle": "Toggle theme",
+    "current": "Theme: {{theme}}"
   },
   "language": {
     "fr": "French",
