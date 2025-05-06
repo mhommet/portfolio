@@ -8,8 +8,7 @@
         "start": "next start",
         "lint": "next lint",
         "type-check": "tsc --noEmit",
-        "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
-        "postinstall": "npm run prepare-files"
+        "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
     },
     "dependencies": {
         "daisyui": "^5.0.35",
