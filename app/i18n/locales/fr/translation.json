@@ -26,7 +26,7 @@
     },
     "skills": {
         "title": "Compétences",
-        "languages": "Langages de programmation : Python, JavaScript, Typescript, Dart, PHP, C#",
+        "languages": "Langages de programmation : Python, JavaScript, Typescript, Dart, PHP",
         "mobile": "Développement Mobile : Flutter",
         "software": "Développement Logiciel : Electron",
         "web": "Développement Web : React, Symfony, VueJS, NextJS, NodeJS",

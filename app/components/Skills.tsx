@@ -33,7 +33,6 @@ export default function Skills({ lng }: SkillsProps): React.ReactElement {
                                 <div className="badge badge-primary badge-lg">TypeScript</div>
                                 <div className="badge badge-primary badge-lg">Dart</div>
                                 <div className="badge badge-primary badge-lg">PHP</div>
-                                <div className="badge badge-primary badge-lg">C#</div>
                             </div>
                         </div>
                     </div>
