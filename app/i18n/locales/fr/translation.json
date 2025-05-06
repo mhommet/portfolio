@@ -1,0 +1,56 @@
+{
+  "header": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "experience": "Expériences",
+    "education": "Formation",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Je suis Milan, un développeur fullstack basé en France.",
+    "description": "Je poursuis actuellement un MBA en développement et management de projets. J'aime apprendre de nouveaux langages et frameworks pendant mon temps libre. J'ai un contrat d'alternance chez Téïcée en tant que développeur fullstack."
+  },
+  "education": {
+    "title": "Formation",
+    "mba": "2023 - 2025 : MBA - Développeur Fullstack",
+    "bachelor": "2022 - 2023 : BACHELOR - Développeur Web",
+    "bts": "2020 - 2022 : BTS SIO - Développement web et logiciel"
+  },
+  "experience": {
+    "title": "Expériences",
+    "current": "2022 - aujourd'hui : Développeur Fullstack chez Téïcée"
+  },
+  "skills": {
+    "title": "Compétences",
+    "languages": "Langages de programmation : Python, JavaScript, Typescript, Dart, PHP, C#",
+    "mobile": "Développement Mobile : Flutter",
+    "software": "Développement Logiciel : Electron",
+    "web": "Développement Web : React, Symfony, VueJS, NextJS, NodeJS",
+    "database": "Bases de données : MySQL, MongoDB"
+  },
+  "projects": {
+    "title": "Projets",
+    "portfolio": "portfolio - Mon portfolio",
+    "dotfiles": "dotfiles - Tous mes fichiers de configuration",
+    "impact": "impact - Projet d'école",
+    "sysadmin": "SysAdmin - Projet d'école cours admin sys Linux",
+    "skeletortheme": "skeletortheme - Un thème vscode basé sur les couleurs de Skeletor",
+    "chataII": "ChatAII - Un chatbot qui parle comme un personnage fictif avec Flask/Flutter",
+    "esp32": "esp32_wifi - Module de développement ESP32 pour le piratage éthique",
+    "pictionary": "Piction.ia.ry - Projet d'école d'un pictionnary avec des images générées par IA avec Stable Diffusion en Flutter"
+  },
+  "cv": {
+    "title": "CV",
+    "download": "Télécharger mon cv"
+  },
+  "theme": {
+    "light": "Clair",
+    "dark": "Sombre"
+  },
+  "language": {
+    "fr": "Français",
+    "en": "Anglais"
+  }
+} 

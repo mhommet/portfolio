@@ -1,0 +1,56 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "I'm Milan, a fullstack developer based in France.",
+    "description": "I'm currently pursuing an MBA in development and project management. I enjoy learning new languages and frameworks in my free time. I have an apprenticeship contract with Téïcée as a fullstack developer."
+  },
+  "education": {
+    "title": "Education",
+    "mba": "2023 - 2025: MBA - Fullstack Developer",
+    "bachelor": "2022 - 2023: BACHELOR - Web Developer",
+    "bts": "2020 - 2022: BTS SIO - Web and Software Development"
+  },
+  "experience": {
+    "title": "Experience",
+    "current": "2022 - present: Fullstack Developer at Téïcée"
+  },
+  "skills": {
+    "title": "Skills",
+    "languages": "Programming Languages: Python, JavaScript, Typescript, Dart, PHP, C#",
+    "mobile": "Mobile Development: Flutter",
+    "software": "Software Development: Electron",
+    "web": "Web Development: React, Symfony, VueJS, NextJS, NodeJS",
+    "database": "Databases: MySQL, MongoDB"
+  },
+  "projects": {
+    "title": "Projects",
+    "portfolio": "portfolio - My portfolio",
+    "dotfiles": "dotfiles - All my config files",
+    "impact": "impact - School project",
+    "sysadmin": "SysAdmin - School project for Linux system administration",
+    "skeletortheme": "skeletortheme - A vscode theme based on Skeletor colors",
+    "chataII": "ChatAII - A chatbot that talks like a fictional character with Flask/Flutter",
+    "esp32": "esp32_wifi - Ethical hacking ESP32 dev module",
+    "pictionary": "Piction.ia.ry - School project of a pictionary with AI generated images with Stable Diffusion in Flutter"
+  },
+  "cv": {
+    "title": "Resume",
+    "download": "Download my resume"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "fr": "French",
+    "en": "English"
+  }
+} 
