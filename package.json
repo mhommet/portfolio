@@ -9,7 +9,6 @@
         "lint": "next lint",
         "type-check": "tsc --noEmit",
         "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
-        "prepare-files": "node scripts/create-example-files.js",
         "postinstall": "npm run prepare-files"
     },
     "dependencies": {
