@@ -42,12 +42,6 @@ export default function Footer({ lng }: FooterProps): React.ReactElement {
                                     </a>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <FaPhone className="text-primary" size={16} />
-                                    <a href="tel:+33603963928" className="link link-hover text-sm">
-                                        +33 6 03 96 39 28
-                                    </a>
-                                </div>
-                                <div className="flex items-center gap-2">
                                     <FaMapMarkerAlt className="text-primary" size={16} />
                                     <span className="text-sm">Caen, France</span>
                                 </div>
