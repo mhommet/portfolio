@@ -14,10 +14,10 @@ export default function Hero({ lng }: HeroProps): React.ReactElement {
 
     // Choisir le bon CV selon la langue
     const cvFile = lng === 'fr' ? '/cv-fr.pdf' : '/cv-en.pdf';
-    
+
     // Adresse email de contact
-    const emailContact = "milan.hommet@protonmail.com";
-    const emailSubject = lng === 'fr' ? "Contact depuis le portfolio" : "Contact from portfolio";
+    const emailContact = 'milan.hommet@protonmail.com';
+    const emailSubject = lng === 'fr' ? 'Contact depuis le portfolio' : 'Contact from portfolio';
 
     return (
         <div className="hero min-h-screen bg-base-200" id="about">
@@ -98,8 +98,8 @@ export default function Hero({ lng }: HeroProps): React.ReactElement {
                         <a href={cvFile} download className="btn btn-primary">
                             {t('cv.download')}
                         </a>
-                        <a 
-                            href={`mailto:${emailContact}?subject=${encodeURIComponent(emailSubject)}`} 
+                        <a
+                            href={`mailto:${emailContact}?subject=${encodeURIComponent(emailSubject)}`}
                             className="btn btn-secondary"
                         >
                             <FaEnvelope className="mr-2" />

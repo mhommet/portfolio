@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     },
 };
 
-type Params = Promise<{lng: string}>;
+type Params = Promise<{ lng: string }>;
 
 export async function generateStaticParams() {
     return languages.map((lng) => ({ lng }));
@@ -52,9 +52,9 @@ export default async function RootLayout({
     const { lng } = await params;
     // Utiliser la valeur par défaut si nécessaire
     const language = lng || fallbackLng;
-    
+
     return (
-        <html lang={language} className="theme-transition">
+        <html lang={language} className="theme-transition" suppressHydrationWarning>
             <head>
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -104,7 +104,7 @@ export default async function RootLayout({
                     }}
                 />
             </head>
-            <body className={`${inter.className} theme-transition`}>
+            <body className={`${inter.className} theme-transition`} suppressHydrationWarning>
                 <Navbar lng={language} />
                 <main>{children}</main>
                 <Footer lng={language} />

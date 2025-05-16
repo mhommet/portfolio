@@ -1,252 +1,290 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "daisyui";
 @plugin "daisyui/theme" {
-  name: "light";
-  default: true;
-  prefersdark: false;
-  color-scheme: light;
+    name: 'light';
+    default: true;
+    prefersdark: false;
+    color-scheme: light;
 
-  /* Couleurs Catppuccin Latte */
-  --color-base-100: #eff1f5; /* base */
-  --color-base-200: #e6e9ef; /* mantle */
-  --color-base-300: #dce0e8; /* crust */
-  --color-base-content: #4c4f69; /* text */
-  
-  --color-primary: #8839ef; /* mauve */
-  --color-primary-content: #ffffff;
-  
-  --color-secondary: #209fb5; /* sapphire */
-  --color-secondary-content: #ffffff;
-  
-  --color-accent: #ea76cb; /* pink */
-  --color-accent-content: #ffffff;
-  
-  --color-neutral: #4c4f69; /* text */
-  --color-neutral-content: #ffffff;
-  
-  --color-info: #1e66f5; /* blue */
-  --color-info-content: #ffffff;
-  
-  --color-success: #40a02b; /* green */
-  --color-success-content: #ffffff;
-  
-  --color-warning: #df8e1d; /* yellow */
-  --color-warning-content: #ffffff;
-  
-  --color-error: #d20f39; /* red */
-  --color-error-content: #ffffff;
+    /* Couleurs One Light */
+    --color-base-100: #fafafa; /* fond principal */
+    --color-base-200: #f0f0f0; /* fond secondaire */
+    --color-base-300: #e5e5e5; /* fond tertiaire */
+    --color-base-content: #383a42; /* texte principal */
 
-  /* border radius */
-  --radius-selector: 0.5rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.5rem;
+    --color-primary: #4078f2; /* bleu principal */
+    --color-primary-content: #ffffff;
 
-  /* base sizes */
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
+    --color-secondary: #50a14f; /* vert */
+    --color-secondary-content: #ffffff;
 
-  /* border size */
-  --border: 1px;
+    --color-accent: #a626a4; /* violet */
+    --color-accent-content: #ffffff;
 
-  /* effects */
-  --depth: 1;
-  --noise: 0;
+    --color-neutral: #383a42; /* texte principal */
+    --color-neutral-content: #ffffff;
+
+    --color-info: #0184bc; /* cyan */
+    --color-info-content: #ffffff;
+
+    --color-success: #50a14f; /* vert */
+    --color-success-content: #ffffff;
+
+    --color-warning: #c18401; /* orange */
+    --color-warning-content: #ffffff;
+
+    --color-error: #e45649; /* rouge */
+    --color-error-content: #ffffff;
+
+    /* border radius */
+    --radius-selector: 0.5rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.5rem;
+
+    /* base sizes */
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+
+    /* border size */
+    --border: 1px;
+
+    /* effects */
+    --depth: 1;
+    --noise: 0;
 }
 @plugin "daisyui/theme" {
-  name: "dark";
-  default: false;
-  prefersdark: true;
-  color-scheme: dark;
+    name: 'dark';
+    default: false;
+    prefersdark: true;
+    color-scheme: dark;
 
-  /* Couleurs Catppuccin Mocha */
-  --color-base-100: #1e1e2e; /* base */
-  --color-base-200: #181825; /* mantle */
-  --color-base-300: #11111b; /* crust */
-  --color-base-content: #cdd6f4; /* text */
-  
-  --color-primary: #cba6f7; /* mauve */
-  --color-primary-content: #11111b; /* crust */
-  
-  --color-secondary: #74c7ec; /* sapphire */
-  --color-secondary-content: #11111b; /* crust */
-  
-  --color-accent: #f5c2e7; /* pink */
-  --color-accent-content: #11111b; /* crust */
-  
-  --color-neutral: #cdd6f4; /* text */
-  --color-neutral-content: #11111b; /* crust */
-  
-  --color-info: #89b4fa; /* blue */
-  --color-info-content: #11111b; /* crust */
-  
-  --color-success: #a6e3a1; /* green */
-  --color-success-content: #11111b; /* crust */
-  
-  --color-warning: #f9e2af; /* yellow */
-  --color-warning-content: #11111b; /* crust */
-  
-  --color-error: #f38ba8; /* red */
-  --color-error-content: #11111b; /* crust */
+    /* Couleurs One Dark */
+    --color-base-100: #282c34; /* fond principal */
+    --color-base-200: #21252b; /* fond secondaire */
+    --color-base-300: #1b1f23; /* fond tertiaire */
+    --color-base-content: #abb2bf; /* texte principal */
 
-  /* border radius */
-  --radius-selector: 0.5rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.5rem;
+    --color-primary: #61afef; /* bleu principal */
+    --color-primary-content: #282c34;
 
-  /* base sizes */
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
+    --color-secondary: #98c379; /* vert */
+    --color-secondary-content: #282c34;
 
-  /* border size */
-  --border: 1px;
+    --color-accent: #c678dd; /* violet */
+    --color-accent-content: #282c34;
 
-  /* effects */
-  --depth: 1;
-  --noise: 0;
+    --color-neutral: #abb2bf; /* texte principal */
+    --color-neutral-content: #282c34;
+
+    --color-info: #56b6c2; /* cyan */
+    --color-info-content: #282c34;
+
+    --color-success: #98c379; /* vert */
+    --color-success-content: #282c34;
+
+    --color-warning: #d19a66; /* orange */
+    --color-warning-content: #282c34;
+
+    --color-error: #e06c75; /* rouge */
+    --color-error-content: #282c34;
+
+    /* border radius */
+    --radius-selector: 0.5rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.5rem;
+
+    /* base sizes */
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+
+    /* border size */
+    --border: 1px;
+
+    /* effects */
+    --depth: 1;
+    --noise: 0;
 }
 
 /* Classes nommées pour les animations */
 .fade-in {
-  animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 70px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
 }
 
 body {
-  min-height: 100vh;
-  background-color: hsl(var(--b1));
+    min-height: 100vh;
+    background-color: hsl(var(--b1));
 }
 
-/* Utilitaires pour les couleurs Catppuccin */
+/* Utilitaires pour les couleurs One */
 :root {
-  --cat-rosewater: var(--rosewater);
-  --cat-flamingo: var(--flamingo);
-  --cat-pink: var(--pink);
-  --cat-mauve: var(--mauve);
-  --cat-red: var(--red);
-  --cat-maroon: var(--maroon);
-  --cat-peach: var(--peach);
-  --cat-yellow: var(--yellow);
-  --cat-green: var(--green);
-  --cat-teal: var(--teal);
-  --cat-sky: var(--sky);
-  --cat-sapphire: var(--sapphire);
-  --cat-blue: var(--blue);
-  --cat-lavender: var(--lavender);
+    /* Ces variables seront définies par le thème actif */
+    --one-bg: initial;
+    --one-text: initial;
+    --one-secondary: initial;
+    --one-border: initial;
+    --one-accent: initial;
+    --one-accent2: initial;
+    --one-cyan: initial;
+    --one-red: initial;
+    --one-orange: initial;
+    --one-gray: initial;
+    --one-purple: initial;
 }
 
 .timeline-item {
-  padding-left: 3rem;
+    padding-left: 3rem;
 }
 
 @media (min-width: 768px) {
-  .timeline-item {
-    padding-left: 0;
-  }
+    .timeline-item {
+        padding-left: 0;
+    }
 }
 
 /* Style pour les items actifs */
 .active {
-  background-color: hsl(var(--p));
-  color: hsl(var(--pc));
+    background-color: hsl(var(--p));
+    color: hsl(var(--pc));
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .card {
-  background-color: hsl(var(--b1));
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  animation: fadeIn 0.5s ease-in-out;
+    background-color: hsl(var(--b1));
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .hero-content {
-  animation: fadeIn 0.8s ease-in-out;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 /* Image de profil avec bordure qui change avec le thème */
 .profile-image {
-  border-radius: 50%;
-  border: 5px solid var(--color-primary);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: border-color 0.3s ease;
+    border-radius: 50%;
+    border: 5px solid var(--one-accent);
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: border-color 0.3s ease;
 }
 
 /* Variables spécifiques pour chaque thème */
-[data-theme="light"] {
-  --cat-rosewater: #dc8a78;
-  --cat-flamingo: #dd7878;
-  --cat-pink: #ea76cb;
-  --cat-mauve: #8839ef;
-  --cat-red: #d20f39;
-  --cat-maroon: #e64553;
-  --cat-peach: #fe640b;
-  --cat-yellow: #df8e1d;
-  --cat-green: #40a02b;
-  --cat-teal: #179299;
-  --cat-sky: #04a5e5;
-  --cat-sapphire: #209fb5;
-  --cat-blue: #1e66f5;
-  --cat-lavender: #7287fd;
+[data-theme='light'] {
+    --one-bg: #fafafa;
+    --one-text: #383a42;
+    --one-secondary: #696c77;
+    --one-border: #d4d4d4;
+    --one-accent: #4078f2;
+    --one-accent2: #50a14f;
+    --one-cyan: #0184bc;
+    --one-red: #e45649;
+    --one-orange: #c18401;
+    --one-gray: #a0a1a7;
+    --one-purple: #a626a4;
 }
 
-[data-theme="dark"] {
-  --cat-rosewater: #f5e0dc;
-  --cat-flamingo: #f2cdcd;
-  --cat-pink: #f5c2e7;
-  --cat-mauve: #cba6f7;
-  --cat-red: #f38ba8;
-  --cat-maroon: #eba0ac;
-  --cat-peach: #fab387;
-  --cat-yellow: #f9e2af;
-  --cat-green: #a6e3a1;
-  --cat-teal: #94e2d5;
-  --cat-sky: #89dceb;
-  --cat-sapphire: #74c7ec;
-  --cat-blue: #89b4fa;
-  --cat-lavender: #b4befe;
+[data-theme='dark'] {
+    --one-bg: #282c34;
+    --one-text: #abb2bf;
+    --one-secondary: #5c6370;
+    --one-border: #3e4451;
+    --one-accent: #61afef;
+    --one-accent2: #98c379;
+    --one-cyan: #56b6c2;
+    --one-red: #e06c75;
+    --one-orange: #d19a66;
+    --one-gray: #828997;
+    --one-purple: #c678dd;
 }
 
-/* Classes d'utilitaires pour les couleurs Catppuccin */
-.bg-rosewater { background-color: var(--cat-rosewater); }
-.bg-flamingo { background-color: var(--cat-flamingo); }
-.bg-pink { background-color: var(--cat-pink); }
-.bg-mauve { background-color: var(--cat-mauve); }
-.bg-red { background-color: var(--cat-red); }
-.bg-maroon { background-color: var(--cat-maroon); }
-.bg-peach { background-color: var(--cat-peach); }
-.bg-yellow { background-color: var(--cat-yellow); }
-.bg-green { background-color: var(--cat-green); }
-.bg-teal { background-color: var(--cat-teal); }
-.bg-sky { background-color: var(--cat-sky); }
-.bg-sapphire { background-color: var(--cat-sapphire); }
-.bg-blue { background-color: var(--cat-blue); }
-.bg-lavender { background-color: var(--cat-lavender); }
+/* Classes d'utilitaires pour les couleurs One */
+.bg-one-bg {
+    background-color: var(--one-bg);
+}
+.bg-one-text {
+    background-color: var(--one-text);
+}
+.bg-one-secondary {
+    background-color: var(--one-secondary);
+}
+.bg-one-border {
+    background-color: var(--one-border);
+}
+.bg-one-accent {
+    background-color: var(--one-accent);
+}
+.bg-one-accent2 {
+    background-color: var(--one-accent2);
+}
+.bg-one-cyan {
+    background-color: var(--one-cyan);
+}
+.bg-one-red {
+    background-color: var(--one-red);
+}
+.bg-one-orange {
+    background-color: var(--one-orange);
+}
+.bg-one-gray {
+    background-color: var(--one-gray);
+}
+.bg-one-purple {
+    background-color: var(--one-purple);
+}
 
-.text-rosewater { color: var(--cat-rosewater); }
-.text-flamingo { color: var(--cat-flamingo); }
-.text-pink { color: var(--cat-pink); }
-.text-mauve { color: var(--cat-mauve); }
-.text-red { color: var(--cat-red); }
-.text-maroon { color: var(--cat-maroon); }
-.text-peach { color: var(--cat-peach); }
-.text-yellow { color: var(--cat-yellow); }
-.text-green { color: var(--cat-green); }
-.text-teal { color: var(--cat-teal); }
-.text-sky { color: var(--cat-sky); }
-.text-sapphire { color: var(--cat-sapphire); }
-.text-blue { color: var(--cat-blue); }
-.text-lavender { color: var(--cat-lavender); }
+.text-one-bg {
+    color: var(--one-bg);
+}
+.text-one-text {
+    color: var(--one-text);
+}
+.text-one-secondary {
+    color: var(--one-secondary);
+}
+.text-one-border {
+    color: var(--one-border);
+}
+.text-one-accent {
+    color: var(--one-accent);
+}
+.text-one-accent2 {
+    color: var(--one-accent2);
+}
+.text-one-cyan {
+    color: var(--one-cyan);
+}
+.text-one-red {
+    color: var(--one-red);
+}
+.text-one-orange {
+    color: var(--one-orange);
+}
+.text-one-gray {
+    color: var(--one-gray);
+}
+.text-one-purple {
+    color: var(--one-purple);
+}
 
 .theme-transition {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
 }
-
