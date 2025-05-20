@@ -16,7 +16,7 @@ export default function Hero({ lng }: HeroProps): React.ReactElement {
     const cvFile = lng === 'fr' ? '/cv-fr.pdf' : '/cv-en.pdf';
 
     // Adresse email de contact
-    const emailContact = 'milan.hommet@protonmail.com';
+    const emailContact = 'contact@hommet.ch';
     const emailSubject = lng === 'fr' ? 'Contact depuis le portfolio' : 'Contact from portfolio';
 
     return (

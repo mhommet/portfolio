@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslation } from '../i18n/client';
-import { FaEnvelope, FaGithub, FaLinkedin, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa';
 import React from 'react';
 
 interface FooterProps {
@@ -11,11 +11,11 @@ interface FooterProps {
 export default function Footer({ lng }: FooterProps): React.ReactElement {
     const { t } = useTranslation(lng);
     const currentYear = new Date().getFullYear();
-    
+
     // Adresse email de contact et sujet
-    const emailContact = "milan.hommet@protonmail.com";
-    const emailSubject = lng === 'fr' ? "Contact depuis le portfolio" : "Contact from portfolio";
-    
+    const emailContact = 'contact@hommet.ch';
+    const emailSubject = lng === 'fr' ? 'Contact depuis le portfolio' : 'Contact from portfolio';
+
     return (
         <footer className="py-8 px-6 bg-base-300 text-base-content" id="contact">
             <div className="container mx-auto">
@@ -24,12 +24,8 @@ export default function Footer({ lng }: FooterProps): React.ReactElement {
                 <div className="flex flex-col lg:flex-row gap-6 mb-8">
                     <div className="card bg-base-100 shadow-lg flex-1">
                         <div className="card-body p-4">
-                            <h3 className="card-title text-lg mb-2">
-                                {t('footer.work_together')}
-                            </h3>
-                            <p className="mb-3 text-sm">
-                                {t('footer.project_inquiry')}
-                            </p>
+                            <h3 className="card-title text-lg mb-2">{t('footer.work_together')}</h3>
+                            <p className="mb-3 text-sm">{t('footer.project_inquiry')}</p>
 
                             <div className="space-y-3 mt-4">
                                 <div className="flex items-center gap-2">
@@ -60,12 +56,8 @@ export default function Footer({ lng }: FooterProps): React.ReactElement {
 
                     <div className="card bg-base-100 shadow-lg flex-1">
                         <div className="card-body p-4">
-                            <h3 className="card-title text-lg mb-2">
-                                {t('footer.follow_me')}
-                            </h3>
-                            <p className="mb-3 text-sm">
-                                {t('footer.social_media')}
-                            </p>
+                            <h3 className="card-title text-lg mb-2">{t('footer.follow_me')}</h3>
+                            <p className="mb-3 text-sm">{t('footer.social_media')}</p>
 
                             <div className="flex gap-3 mt-4">
                                 <a
@@ -91,7 +83,8 @@ export default function Footer({ lng }: FooterProps): React.ReactElement {
 
                 <div className="text-center mt-6">
                     <p className="text-sm">
-                        &copy; {currentYear} Milan Hommet | {t('footer.copyright')} | {t('footer.freelance_dev')}
+                        &copy; {currentYear} Milan Hommet | {t('footer.copyright')} |{' '}
+                        {t('footer.freelance_dev')}
                     </p>
                 </div>
             </div>
