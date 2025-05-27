@@ -1,0 +1,51 @@
+---
+import ProjectCard from "./ProjectCard";
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  link: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "Projet 1",
+    description: "Description du projet 1. Ce projet a été réalisé avec les technologies X, Y et Z.",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop",
+    tags: ["React", "Node.js", "Tailwind CSS"],
+    link: "#"
+  },
+  {
+    title: "Projet 2",
+    description: "Description du projet 2. Une application web moderne avec une interface utilisateur élégante.",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1000&auto=format&fit=crop",
+    tags: ["Vue.js", "Express", "MongoDB"],
+    link: "#"
+  },
+  {
+    title: "Projet 3",
+    description: "Description du projet 3. Un site e-commerce avec un système de panier et de paiement en ligne.",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1000&auto=format&fit=crop",
+    tags: ["Next.js", "Prisma", "PostgreSQL"],
+    link: "#"
+  }
+];
+---
+
+<section id="projects" class="container py-16 md:py-24 lg:py-32 bg-muted/10 rounded-lg">
+  <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-6 text-center">
+    <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Mes Projets</h2>
+    <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+      Découvrez quelques-uns de mes projets récents.
+    </p>
+  </div>
+  <div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
+    {
+      projects.map((project) => (
+        <ProjectCard client:load project={project} />
+      ))
+    }
+  </div>
+</section> 

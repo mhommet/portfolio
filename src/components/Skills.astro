@@ -1,0 +1,23 @@
+---
+import SkillBadges from "./SkillBadges";
+
+type SkillsType = Record<string, string[]>;
+
+const skills: SkillsType = {
+  "Langages": ["JavaScript", "TypeScript", "HTML", "CSS", "SQL", "Python"],
+  "Frameworks & Libraries": ["React", "Vue.js", "Next.js", "Node.js", "Express", "Tailwind CSS"],
+  "Outils & Plateformes": ["Git", "GitHub", "VS Code", "Docker", "Figma", "AWS"]
+};
+---
+
+<section id="skills" class="container py-16 md:py-24 lg:py-32">
+  <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-6 text-center">
+    <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Mes Compétences</h2>
+    <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+      Les technologies et outils avec lesquels je travaille.
+    </p>
+  </div>
+  <div class="bg-accent/10 rounded-lg p-8 mt-12 max-w-5xl mx-auto">
+    <SkillBadges client:load skills={skills} />
+  </div>
+</section> 
