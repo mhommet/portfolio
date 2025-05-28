@@ -1,16 +1,15 @@
 ---
 import HeroButtons from "./HeroButtons";
+import { t } from "@/i18n";
 ---
 
 <section class="container flex flex-col items-center justify-center py-16 md:py-24 lg:py-32 text-center">
   <div class="flex max-w-[980px] flex-col items-center gap-4">
     <h1 class="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl lg:text-5xl">
-      Bonjour, je suis <span class="text-primary">Prénom Nom</span><br />
-      Développeur Web Créatif
+      {t("hero.greeting")}
     </h1>
     <p class="max-w-[700px] text-lg text-muted-foreground md:text-xl">
-      Bienvenue sur mon portfolio. Je crée des expériences web modernes, 
-      esthétiques et performantes.
+      {t("hero.description")}
     </p>
   </div>
   <div class="mt-8">

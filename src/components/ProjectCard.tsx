@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 interface Project {
@@ -18,53 +10,41 @@ interface Project {
   link: string;
 }
 
-interface ProjectCardProps {
+interface Props {
   project: Project;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+const ProjectCard: React.FC<Props> = ({ project }) => {
   return (
     <Card className="overflow-hidden border border-accent/20 hover:border-accent/50 transition-all duration-300 hover:shadow-md">
-      <CardHeader className="p-0">
-        <div className="overflow-hidden">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="h-48 w-full object-cover transition-transform duration-500 hover:scale-105"
-          />
-        </div>
-      </CardHeader>
-      <CardContent className="p-6">
-        <CardTitle className="text-xl font-bold mb-2">
-          {project.title}
-        </CardTitle>
-        <CardDescription className="mt-2 line-clamp-3 text-muted-foreground">
-          {project.description}
-        </CardDescription>
+      <div className="relative aspect-video w-full overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="h-full w-full object-cover transition-all hover:scale-105"
+        />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold">{project.title}</h3>
+        <p className="mt-2 text-muted-foreground">{project.description}</p>
         <div className="mt-4 flex flex-wrap gap-2">
-          {project.tags.map((tag, index) => (
-            <Badge
-              key={index}
-              variant="outline"
-              className="bg-primary/10 hover:bg-primary/20 transition-colors"
-            >
+          {project.tags.map((tag) => (
+            <Badge key={tag} variant="outline" className="bg-primary/5">
               {tag}
             </Badge>
           ))}
         </div>
-      </CardContent>
-      <CardFooter className="px-6 pb-6">
-        <Button variant="default" asChild>
+        <div className="mt-6">
           <a
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full justify-center"
+            className="text-sm font-medium text-primary underline-offset-4 hover:underline"
           >
-            Voir le projet
+            GitHub →
           </a>
-        </Button>
-      </CardFooter>
+        </div>
+      </div>
     </Card>
   );
 };

@@ -1,22 +1,21 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 
-interface SkillBadgesProps {
+interface Props {
   skills: Record<string, string[]>;
 }
 
-const SkillBadges: React.FC<SkillBadgesProps> = ({ skills }) => {
+const SkillBadges: React.FC<Props> = ({ skills }) => {
   return (
-    <div className="mx-auto max-w-5xl">
-      {Object.entries(skills).map(([category, skillList]) => (
-        <div key={category} className="mb-10 last:mb-0">
-          <h3 className="mb-5 text-xl font-bold">{category}</h3>
-          <div className="flex flex-wrap gap-3">
-            {skillList.map((skill, index) => (
+    <div className="space-y-6">
+      {Object.entries(skills).map(([category, items]) => (
+        <div key={category} className="space-y-3">
+          <h3 className="font-semibold text-lg">{category}</h3>
+          <div className="flex flex-wrap gap-2">
+            {items.map((skill) => (
               <Badge
-                key={index}
-                className="px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors"
-                variant="outline"
+                key={skill}
+                className="bg-primary/10 text-primary hover:bg-primary/20 transition-all"
               >
                 {skill}
               </Badge>

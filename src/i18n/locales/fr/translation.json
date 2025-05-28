@@ -1,0 +1,73 @@
+{
+  "header": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "experience": "Expériences Professionnelles",
+    "education": "Formation",
+    "projects": "Projets",
+    "realisations": "Réalisations",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Je suis Milan, un développeur fullstack basé en France.",
+    "description": "Développeur Full-Stack diplômé d'un Bac+5, avec trois ans d'expérience en alternance chez Téïcée. Je propose aujourd'hui mes services en freelance pour vos projets web et mobiles.",
+    "job_title": "Développeur Fullstack Freelance"
+  },
+  "education": {
+    "title": "Formation",
+    "mba": "Sept. 2023 - Juil. 2025 : MBA Développeur Fullstack – Alternance",
+    "bachelor": "Sept. 2022 - Juil. 2023 : Bachelor Conception et Développement d'Applications – Alternance",
+    "bts": "Sept. 2020 - Juil. 2022 : BTS SIO SLAM - Services Informatiques aux Organisations"
+  },
+  "experience": {
+    "title": "Expériences Professionnelles",
+    "current": "Juil. 2022 - Juil. 2025 : Développeur Fullstack - Téïcée"
+  },
+  "skills": {
+    "title": "Compétences",
+    "languages": "Langages de programmation : Python, JavaScript, Typescript, Dart, PHP",
+    "mobile": "Développement Mobile : Flutter",
+    "software": "Développement Logiciel : Electron",
+    "web": "Développement Web : React, Symfony, VueJS, NextJS, NodeJS",
+    "database": "Bases de données : MySQL, MongoDB"
+  },
+  "projects": {
+    "title": "Projets",
+    "portfolio": "portfolio - Mon portfolio",
+    "dotfiles": "dotfiles - Tous mes fichiers de configuration",
+    "impact": "impact - Projet d'école",
+    "sysadmin": "SysAdmin - Projet d'école cours admin sys Linux",
+    "skeletortheme": "skeletortheme - Un thème vscode basé sur les couleurs de Skeletor",
+    "chataII": "ChatAII - Un chatbot qui parle comme un personnage fictif avec Flask/Flutter",
+    "esp32": "esp32_wifi - Module de développement ESP32 pour le piratage éthique",
+    "pictionary": "Piction.ia.ry - Projet d'école d'un pictionnary avec des images générées par IA avec Stable Diffusion en Flutter"
+  },
+  "realisations": {
+    "title": "Réalisations",
+    "dday": "DDay Normandy Experience - Site web touristique sur le débarquement en Normandie"
+  },
+  "cv": {
+    "title": "CV",
+    "download": "Télécharger mon cv"
+  },
+  "theme": {
+    "light": "Latte",
+    "dark": "Mocha",
+    "toggle": "Changer de thème",
+    "current": "Thème: {{theme}}"
+  },
+  "language": {
+    "fr": "Français",
+    "en": "Anglais"
+  },
+  "footer": {
+    "work_together": "Travaillons ensemble",
+    "project_inquiry": "Vous avez un projet ? N'hésitez pas à me contacter pour discuter de vos besoins et voir comment je peux vous aider.",
+    "follow_me": "Suivez-moi",
+    "social_media": "Retrouvez-moi sur les réseaux sociaux pour suivre mes projets et actualités.",
+    "send_message": "Envoyer un message",
+    "copyright": "Tous droits réservés",
+    "freelance_dev": "Développeur Fullstack Freelance"
+  }
+}

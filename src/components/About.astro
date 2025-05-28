@@ -1,19 +1,14 @@
 ---
 import ProfileAvatar from "./ProfileAvatar";
+import { t } from "@/i18n";
 ---
 <section id="about" class="container py-16 md:py-24 lg:py-32">
   <div class="mx-auto flex max-w-5xl flex-col md:flex-row items-center justify-between gap-16">
     <div class="order-2 md:order-1 text-center md:text-left">
-      <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6">À propos de moi</h2>
+      <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6">{t("header.about")}</h2>
       <div class="space-y-4 text-muted-foreground">
         <p>
-          Je suis un développeur web passionné avec plus de X années d'expérience dans la création d'applications web modernes et performantes.
-        </p>
-        <p>
-          Ma spécialité est le développement front-end avec React, mais j'ai également une solide expérience en back-end avec Node.js.
-        </p>
-        <p>
-          En dehors du code, j'aime [vos intérêts personnels], et je suis toujours à la recherche de nouveaux défis et opportunités d'apprentissage.
+          {t("hero.description")}
         </p>
       </div>
     </div>

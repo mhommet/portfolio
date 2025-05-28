@@ -1,37 +1,38 @@
 ---
 import MobileMenu from "./MobileMenu";
+import { t } from "@/i18n";
 ---
 
 <header class="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/40">
   <div class="container flex h-16 items-center justify-between py-4">
     <div class="flex gap-6 md:gap-10">
       <a href="/" class="flex items-center space-x-2 font-bold text-lg">
-        <span>Mon Portfolio</span>
+        <span>Milan</span>
       </a>
       <nav class="hidden gap-8 md:flex">
         <a
           href="#about"
           class="flex items-center text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
         >
-          À propos
+          {t("header.about")}
         </a>
         <a
           href="#projects"
           class="flex items-center text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
         >
-          Projets
+          {t("header.projects")}
         </a>
         <a
           href="#skills"
           class="flex items-center text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
         >
-          Compétences
+          {t("header.skills")}
         </a>
         <a
           href="#contact"
           class="flex items-center text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
         >
-          Contact
+          {t("header.contact")}
         </a>
       </nav>
     </div>

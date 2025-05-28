@@ -1,22 +1,23 @@
 ---
 import ContactCard from "./ContactCard";
 import ContactButtons from "./ContactButtons";
+import { t } from "@/i18n";
 ---
 
 <section id="contact" class="container py-16 md:py-24 lg:py-32">
   <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-6 text-center">
-    <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Me Contacter</h2>
+    <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("header.contact")}</h2>
     <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-      Vous avez un projet en tête ? N'hésitez pas à me contacter.
+      {t("footer.project_inquiry")}
     </p>
   </div>
   <div class="mx-auto grid max-w-3xl items-center gap-8 py-12 lg:grid-cols-2">
     <ContactCard client:load />
     <div class="grid gap-6 text-center lg:text-left">
       <div class="flex flex-col gap-3">
-        <h3 class="text-xl font-bold">Réseaux sociaux</h3>
+        <h3 class="text-xl font-bold">{t("footer.follow_me")}</h3>
         <p class="text-muted-foreground">
-          Retrouvez-moi sur ces plateformes
+          {t("footer.social_media")}
         </p>
       </div>
       <div class="flex justify-center lg:justify-start">

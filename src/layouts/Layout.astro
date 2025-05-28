@@ -18,7 +18,7 @@ const { title = "Portfolio Personnel" } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="min-h-screen bg-background antialiased flex flex-col items-center">
+	<body class="min-h-screen bg-background text-foreground antialiased flex flex-col items-center">
 		<div class="w-full max-w-[1400px]">
 			<slot />
 		</div>
@@ -31,6 +31,8 @@ const { title = "Portfolio Personnel" } = Astro.props;
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		background-color: var(--background);
+		color: var(--foreground);
 	}
 
 	.container {
