@@ -1,44 +1,50 @@
 ---
-import MobileMenu from "./MobileMenu";
-import { t } from "@/i18n";
+import LanguageSelector from "./LanguageSelector";
+import { t } from "../i18n";
+
+// Récupérer la langue depuis l'URL
+const urlPathname = Astro.url.pathname;
+const lang = urlPathname.startsWith('/en') ? 'en' : 'fr';
+
+// Récupérer les traductions en utilisant la fonction t avec la langue spécifiée
+const skillsLabel = t("header.skills", lang);
+const contactLabel = t("header.contact", lang);
+const aboutLabel = t("header.about", lang);
+const projectsLabel = t("header.projects", lang);
 ---
 
-<header class="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/40">
-  <div class="container flex h-16 items-center justify-between py-4">
-    <div class="flex gap-6 md:gap-10">
-      <a href="/" class="flex items-center space-x-2 font-bold text-lg">
-        <span>Milan</span>
+<header class="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <div class="container flex h-14 items-center">
+    <div class="mr-4 flex">
+      <a href={`/${lang}`} class="flex items-center space-x-2">
+        <span class="font-bold">Milan Hommet</span>
       </a>
-      <nav class="hidden gap-8 md:flex">
-        <a
-          href="#about"
-          class="flex items-center text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
-        >
-          {t("header.about")}
+    </div>
+    <div class="flex flex-1 items-center justify-end space-x-4">
+      <nav class="flex items-center">
+        <a href={`/${lang}/#about`} class="px-4 py-2 text-sm font-medium hover:text-primary">
+          {aboutLabel}
         </a>
-        <a
-          href="#projects"
-          class="flex items-center text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
-        >
-          {t("header.projects")}
+        <a href={`/${lang}/#projects`} class="px-4 py-2 text-sm font-medium hover:text-primary">
+          {projectsLabel}
         </a>
-        <a
-          href="#skills"
-          class="flex items-center text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
-        >
-          {t("header.skills")}
+        <a href={`/${lang}/#skills`} class="px-4 py-2 text-sm font-medium hover:text-primary">
+          {skillsLabel}
         </a>
-        <a
-          href="#contact"
-          class="flex items-center text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
-        >
-          {t("header.contact")}
+        <a href={`/${lang}/#contact`} class="px-4 py-2 text-sm font-medium hover:text-primary">
+          {contactLabel}
         </a>
       </nav>
-    </div>
-    
-    <div class="flex items-center gap-2">
-      <MobileMenu client:load />
+      <div id="language-selector-container">
+        <LanguageSelector initialLang={lang} client:load />
+      </div>
     </div>
   </div>
-</header> 
+</header>
+
+<script>
+  // Script pour s'assurer que le sélecteur de langue est correctement initialisé
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('Header DOM chargé, préparation du sélecteur de langue');
+  });
+</script> 

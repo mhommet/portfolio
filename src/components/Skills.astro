@@ -1,23 +1,24 @@
 ---
 import SkillBadges from "./SkillBadges";
-import { t } from "@/i18n";
+import { t } from "../i18n";
 
-type SkillsType = Record<string, string[]>;
+// Récupérer la langue depuis l'URL
+const urlPathname = Astro.url.pathname;
+const lang = urlPathname.startsWith('/en') ? 'en' : 'fr';
 
-const skills: SkillsType = {
-  [t("skills.languages")]: ["Python", "JavaScript", "Typescript", "Dart", "PHP"],
-  [t("skills.web")]: ["React", "Symfony", "VueJS", "NextJS", "NodeJS"],
-  [t("skills.mobile")]: ["Flutter"],
-  [t("skills.software")]: ["Electron"],
-  [t("skills.database")]: ["MySQL", "MongoDB"]
+// Définir les compétences avec les traductions
+const skills = {
+  [t("skills.languages", lang)]: ["Python", "JavaScript", "Typescript", "Dart", "PHP"],
+  [t("skills.frameworks", lang)]: ["React", "Symfony", "VueJS", "NextJS", "NodeJS", "Flutter", "Electron"],
+  [t("skills.database", lang)]: ["MySQL", "MongoDB"]
 };
 ---
 
 <section id="skills" class="container py-16 md:py-24 lg:py-32">
   <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-6 text-center">
-    <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("skills.title")}</h2>
+    <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("skills.title", lang)}</h2>
     <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-      {t("hero.job_title")}
+      {t("skills.description", lang)}
     </p>
   </div>
   <div class="bg-accent/10 rounded-lg p-8 mt-12 max-w-5xl mx-auto">

@@ -6,13 +6,16 @@
     "experience": "Professional Experience",
     "education": "Education",
     "projects": "Projects",
-    "realisations": "Portfolio",
     "contact": "Contact"
   },
   "hero": {
     "greeting": "I'm Milan, a fullstack developer based in France.",
-    "description": "Full-Stack Developer with a Master's degree (Bac+5) and three years of work-study experience at Téïcée. I now offer my services as a freelance developer for your web and mobile projects.",
+    "description": "Full-Stack Developer with a Master's degree (Bac+5) and three years of work-study experience. I now offer my services as a freelance developer for your web and mobile projects.",
     "job_title": "Freelance Fullstack Developer"
+  },
+  "about": {
+    "title": "About",
+    "description": "Full-Stack Developer with a Master's degree (Bac+5) and three years of work-study experience. I now offer my services as a freelance developer for your web and mobile projects."
   },
   "education": {
     "title": "Education",
@@ -26,26 +29,16 @@
   },
   "skills": {
     "title": "Skills",
-    "languages": "Programming Languages: Python, JavaScript, Typescript, Dart, PHP",
-    "mobile": "Mobile Development: Flutter",
-    "software": "Software Development: Electron",
-    "web": "Web Development: React, Symfony, VueJS, NextJS, NodeJS",
-    "database": "Databases: MySQL, MongoDB"
+    "description": "Freelance Fullstack Developer",
+    "languages": "Programming Languages",
+    "frameworks": "Frameworks",
+    "database": "Databases"
   },
   "projects": {
     "title": "Projects",
-    "portfolio": "portfolio - My portfolio",
-    "dotfiles": "dotfiles - All my config files",
-    "impact": "impact - School project",
-    "sysadmin": "SysAdmin - School project for Linux system administration",
-    "skeletortheme": "skeletortheme - A vscode theme based on Skeletor colors",
-    "chataII": "ChatAII - A chatbot that talks like a fictional character with Flask/Flutter",
-    "esp32": "esp32_wifi - Ethical hacking ESP32 dev module",
-    "pictionary": "Piction.ia.ry - School project of a pictionary with AI generated images with Stable Diffusion in Flutter"
-  },
-  "realisations": {
-    "title": "Portfolio",
-    "dday": "DDay Normandy Experience - Tourism website about D-Day landings in Normandy"
+    "description": "Client projects completed as a freelancer",
+    "dday": "DDay Normandy Experience - Tourism website about D-Day landings in Normandy",
+    "dday_desc": "Website for selling tickets for tourist guidance on the beaches of the D-Day landings in Normandy."
   },
   "cv": {
     "title": "Resume",
@@ -59,7 +52,16 @@
   },
   "language": {
     "fr": "French",
-    "en": "English"
+    "en": "English",
+    "switch": "Switch language"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Do you have a project? Feel free to contact me to discuss your needs and see how I can help."
+  },
+  "social": {
+    "title": "Follow me",
+    "description": "Find me on social media to follow my projects and news."
   },
   "footer": {
     "work_together": "Let's work together",

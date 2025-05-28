@@ -1,17 +1,10 @@
 ---
 import HeroButtons from "./HeroButtons";
-import { t } from "@/i18n";
+import HeroText from "./HeroText";
 ---
 
 <section class="container flex flex-col items-center justify-center py-16 md:py-24 lg:py-32 text-center">
-  <div class="flex max-w-[980px] flex-col items-center gap-4">
-    <h1 class="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl lg:text-5xl">
-      {t("hero.greeting")}
-    </h1>
-    <p class="max-w-[700px] text-lg text-muted-foreground md:text-xl">
-      {t("hero.description")}
-    </p>
-  </div>
+  <HeroText client:load />
   <div class="mt-8">
     <HeroButtons client:load />
   </div>

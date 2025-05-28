@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import About from '../../components/About.astro';
+import Projects from '../../components/Projects.astro';
+import Skills from '../../components/Skills.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+import { t } from '../../i18n';
+
+// Générer les pages pour chaque langue
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'fr' } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+const { lang } = Astro.params;
+
+// Utiliser la fonction de traduction avec la langue actuelle
+const title = lang === 'en' ? 'My Portfolio | Milan Hommet' : 'Mon Portfolio | Milan Hommet';
+---
+
+<Layout title={title} lang={lang}>
+	<Header />
+	<main class="container py-8">
+		<Hero />
+		<About />
+		<Projects />
+		<Skills />
+		<Contact />
+	</main>
+	<Footer />
+</Layout> 

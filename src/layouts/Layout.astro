@@ -3,13 +3,14 @@ import '../styles/global.css';
 
 interface Props {
 	title?: string;
+	lang?: string;
 }
 
-const { title = "Portfolio Personnel" } = Astro.props;
+const { title = "Portfolio Personnel", lang = "fr" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="fr" class="dark">
+<html lang={lang} class="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Portfolio personnel - Design moderne et élégant" />
@@ -22,6 +23,43 @@ const { title = "Portfolio Personnel" } = Astro.props;
 		<div class="w-full max-w-[1400px]">
 			<slot />
 		</div>
+		<script define:vars={{ currentLang: lang }}>
+			// Initialiser la langue au chargement de la page
+			function initLanguage() {
+				// Extraire la langue de l'URL
+				const path = window.location.pathname;
+				const langMatch = path.match(/^\/(fr|en)(\/.*)?$/);
+				const urlLang = langMatch ? langMatch[1] : null;
+				
+				// Priorité à l'URL, puis au localStorage
+				const languageToSet = urlLang || localStorage.getItem('language') || currentLang;
+				
+				// Appliquer la langue
+				document.documentElement.setAttribute('lang', languageToSet);
+				localStorage.setItem('language', languageToSet);
+				console.log('Langue détectée au chargement:', languageToSet);
+				
+				// S'assurer que le localStorage et l'URL sont cohérents
+				if (urlLang && localStorage.getItem('language') !== urlLang) {
+					localStorage.setItem('language', urlLang);
+				}
+			}
+			
+			// Exécuter l'initialisation immédiatement
+			initLanguage();
+			
+			// Écouter les événements de changement de langue
+			window.addEventListener('languageChanged', () => {
+				const storedLang = localStorage.getItem('language');
+				if (storedLang) {
+					document.documentElement.setAttribute('lang', storedLang);
+					console.log('Langue mise à jour après événement:', storedLang);
+				}
+			});
+			
+			// Réinitialiser lors du chargement complet du DOM
+			document.addEventListener('DOMContentLoaded', initLanguage);
+		</script>
 	</body>
 </html>
 

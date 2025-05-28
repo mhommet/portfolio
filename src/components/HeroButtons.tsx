@@ -1,8 +1,10 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { t } from "@/i18n";
+import { useTranslation } from "@/i18n/client";
 
 const HeroButtons: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="flex gap-4">
       <Button

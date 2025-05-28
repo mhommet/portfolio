@@ -1,14 +1,18 @@
 ---
 import ProfileAvatar from "./ProfileAvatar";
-import { t } from "@/i18n";
+import { t } from "../i18n";
+
+// Get language from URL
+const urlPathname = Astro.url.pathname;
+const lang = urlPathname.startsWith('/en') ? 'en' : 'fr';
 ---
 <section id="about" class="container py-16 md:py-24 lg:py-32">
   <div class="mx-auto flex max-w-5xl flex-col md:flex-row items-center justify-between gap-16">
     <div class="order-2 md:order-1 text-center md:text-left">
-      <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6">{t("header.about")}</h2>
+      <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6">{t("about.title", lang)}</h2>
       <div class="space-y-4 text-muted-foreground">
         <p>
-          {t("hero.description")}
+          {t("about.description", lang)}
         </p>
       </div>
     </div>

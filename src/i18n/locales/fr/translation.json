@@ -6,13 +6,16 @@
     "experience": "Expériences Professionnelles",
     "education": "Formation",
     "projects": "Projets",
-    "realisations": "Réalisations",
     "contact": "Contact"
   },
   "hero": {
     "greeting": "Je suis Milan, un développeur fullstack basé en France.",
-    "description": "Développeur Full-Stack diplômé d'un Bac+5, avec trois ans d'expérience en alternance chez Téïcée. Je propose aujourd'hui mes services en freelance pour vos projets web et mobiles.",
+    "description": "Développeur Full-Stack diplômé d'un Bac+5, avec trois ans d'expérience en alternance. Je propose aujourd'hui mes services en freelance pour vos projets web et mobiles.",
     "job_title": "Développeur Fullstack Freelance"
+  },
+  "about": {
+    "title": "À propos",
+    "description": "Développeur Full-Stack diplômé d'un Bac+5, avec trois ans d'expérience en alternance. Je propose aujourd'hui mes services en freelance pour vos projets web et mobiles."
   },
   "education": {
     "title": "Formation",
@@ -26,26 +29,16 @@
   },
   "skills": {
     "title": "Compétences",
-    "languages": "Langages de programmation : Python, JavaScript, Typescript, Dart, PHP",
-    "mobile": "Développement Mobile : Flutter",
-    "software": "Développement Logiciel : Electron",
-    "web": "Développement Web : React, Symfony, VueJS, NextJS, NodeJS",
-    "database": "Bases de données : MySQL, MongoDB"
+    "description": "Développeur Fullstack Freelance",
+    "languages": "Langages de programmation",
+    "frameworks": "Frameworks",
+    "database": "Bases de données"
   },
   "projects": {
     "title": "Projets",
-    "portfolio": "portfolio - Mon portfolio",
-    "dotfiles": "dotfiles - Tous mes fichiers de configuration",
-    "impact": "impact - Projet d'école",
-    "sysadmin": "SysAdmin - Projet d'école cours admin sys Linux",
-    "skeletortheme": "skeletortheme - Un thème vscode basé sur les couleurs de Skeletor",
-    "chataII": "ChatAII - Un chatbot qui parle comme un personnage fictif avec Flask/Flutter",
-    "esp32": "esp32_wifi - Module de développement ESP32 pour le piratage éthique",
-    "pictionary": "Piction.ia.ry - Projet d'école d'un pictionnary avec des images générées par IA avec Stable Diffusion en Flutter"
-  },
-  "realisations": {
-    "title": "Réalisations",
-    "dday": "DDay Normandy Experience - Site web touristique sur le débarquement en Normandie"
+    "description": "Projets clients réalisés en freelance",
+    "dday": "DDay Normandy Experience - Site web touristique sur le débarquement en Normandie",
+    "dday_desc": "Site de vente de billets pour du guidage touristique sur les plages du débarquement en Normandie."
   },
   "cv": {
     "title": "CV",
@@ -59,7 +52,16 @@
   },
   "language": {
     "fr": "Français",
-    "en": "Anglais"
+    "en": "Anglais",
+    "switch": "Changer de langue"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Vous avez un projet ? N'hésitez pas à me contacter pour discuter de vos besoins et voir comment je peux vous aider."
+  },
+  "social": {
+    "title": "Suivez-moi",
+    "description": "Retrouvez-moi sur les réseaux sociaux pour suivre mes projets et actualités."
   },
   "footer": {
     "work_together": "Travaillons ensemble",

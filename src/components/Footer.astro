@@ -1,17 +1,21 @@
 ---
 import FooterSeparator from "./FooterSeparator";
-import { t } from "@/i18n";
+import { t } from "../i18n";
+
+// Récupérer la langue depuis l'URL
+const urlPathname = Astro.url.pathname;
+const lang = urlPathname.startsWith('/en') ? 'en' : 'fr';
 ---
 
 <footer class="container py-16">
   <FooterSeparator client:load />
   <div class="flex flex-col items-center justify-between gap-6 py-8 md:h-16 md:flex-row md:py-0">
     <div class="text-center text-sm leading-loose text-muted-foreground md:text-left">
-      © {new Date().getFullYear()} Milan. {t("footer.copyright")}.
+      © {new Date().getFullYear()} Milan. {t("footer.copyright", lang)}.
     </div>
     <div class="flex items-center gap-6">
       <a href="#" class="text-sm text-muted-foreground underline-offset-4 hover:underline hover:text-primary transition-colors">
-        {t("footer.freelance_dev")}
+        {t("footer.freelance_dev", lang)}
       </a>
     </div>
   </div>
