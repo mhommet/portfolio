@@ -1,5 +1,12 @@
 ---
-// Rediriger vers la version française par défaut
+// Redirection vers la version française par défaut
+if (Astro.request.url.includes('localhost') || Astro.request.url.includes('127.0.0.1')) {
+  // En développement, rediriger avec Astro.redirect
+  return Astro.redirect('/fr');
+}
+// En production, le fichier _redirects s'en occupe déjà
 ---
-
-<meta http-equiv="refresh" content="0;url=/fr" />
+<script>
+  // Fallback côté client si les redirections serveur ne fonctionnent pas
+  window.location.href = '/fr';
+</script>
