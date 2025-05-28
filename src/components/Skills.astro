@@ -1,6 +1,7 @@
 ---
 import SkillBadges from "./SkillBadges";
 import { t } from "../i18n";
+import ScrollAnimation from "./ScrollAnimation";
 
 // Récupérer la langue depuis l'URL
 const urlPathname = Astro.url.pathname;
@@ -14,11 +15,15 @@ const skills = {
 };
 ---
 
-<section id="skills" class="container py-16 md:py-24 lg:py-32">
-  <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-6 text-center">
-    <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("skills.title", lang)}</h2>
+<section id="skills" class="container py-24 md:py-32 lg:py-40 my-16">
+  <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-8 text-center">
+    <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl opacity-0">{t("skills.title", lang)}</h2>
+    <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed opacity-0">
+      {t("skills.description", lang)}
+    </p>
   </div>
-  <div class="bg-accent/10 rounded-lg p-8 mt-12 max-w-5xl mx-auto">
+  <div class="bg-accent/10 rounded-xl p-10 mt-16 max-w-5xl mx-auto animate-content opacity-0">
     <SkillBadges client:load skills={skills} />
   </div>
+  <ScrollAnimation client:load sectionId="skills" />
 </section> 

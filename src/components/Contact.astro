@@ -1,25 +1,26 @@
 ---
 import ContactButtons from "./ContactButtons";
 import { t } from "../i18n";
+import ScrollAnimation from "./ScrollAnimation";
 
 // Récupérer la langue depuis l'URL
 const urlPathname = Astro.url.pathname;
 const lang = urlPathname.startsWith('/en') ? 'en' : 'fr';
 ---
 
-<section id="contact" class="container py-16 md:py-24 lg:py-32">
-  <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-6 text-center">
-    <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("contact.title", lang)}</h2>
-    <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+<section id="contact" class="container py-24 md:py-32 lg:py-40 my-16 bg-muted/10 rounded-xl">
+  <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-8 text-center">
+    <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl opacity-0">{t("contact.title", lang)}</h2>
+    <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed opacity-0">
       {t("contact.description", lang)}
     </p>
   </div>
-  <div class="mx-auto max-w-3xl items-center gap-8 py-12 text-center">
-    <div class="flex flex-col gap-6 items-center">
-      <a href="mailto:milan.hommet@protonmail.com" class="text-xl font-medium text-primary hover:underline transition-all">
+  <div class="mx-auto max-w-3xl items-center gap-8 py-16 text-center">
+    <div class="flex flex-col gap-8 items-center animate-content opacity-0">
+      <a href="mailto:milan.hommet@protonmail.com" class="text-2xl font-medium text-primary hover:underline transition-all transform hover:scale-105">
         milan.hommet@protonmail.com
       </a>
-      <div class="mt-8">
+      <div class="mt-12">
         <h3 class="text-xl font-bold mb-4">{t("social.title", lang)}</h3>
         <p class="text-muted-foreground mb-6">
           {t("social.description", lang)}
@@ -30,4 +31,5 @@ const lang = urlPathname.startsWith('/en') ? 'en' : 'fr';
       </div>
     </div>
   </div>
+  <ScrollAnimation client:load sectionId="contact" />
 </section> 

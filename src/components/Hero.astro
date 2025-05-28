@@ -1,11 +1,13 @@
 ---
 import HeroButtons from "./HeroButtons";
 import HeroText from "./HeroText";
+import ScrollAnimation from "./ScrollAnimation";
 ---
 
-<section class="container flex flex-col items-center justify-center py-16 md:py-24 lg:py-32 text-center">
+<section id="hero" class="container flex flex-col items-center justify-center py-28 md:py-36 lg:py-48 text-center">
   <HeroText client:load />
-  <div class="mt-8">
+  <div class="mt-12">
     <HeroButtons client:load />
   </div>
+  <ScrollAnimation client:load sectionId="hero" />
 </section> 
