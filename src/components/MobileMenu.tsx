@@ -1,7 +1,16 @@
 import React, { useState } from "react";
-import { t } from "@/i18n";
 
-const MobileMenu: React.FC = () => {
+interface MenuItem {
+  href: string;
+  label: string;
+}
+
+interface MobileMenuProps {
+  items: MenuItem[];
+  lang: string;
+}
+
+const MobileMenu: React.FC<MobileMenuProps> = ({ items, lang }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -37,34 +46,16 @@ const MobileMenu: React.FC = () => {
         <div className="fixed inset-0 top-16 z-50 grid h-[calc(100vh-4rem)] grid-flow-row auto-rows-max overflow-auto pb-6 shadow-md animate-in slide-in-from-top-1 lg:hidden">
           <div className="relative z-20 bg-background p-6">
             <nav className="grid gap-6 text-lg font-medium">
-              <a
-                href="#about"
-                className="flex w-full items-center rounded-md py-2 text-foreground hover:text-primary"
-                onClick={toggleMenu}
-              >
-                {t("header.about")}
-              </a>
-              <a
-                href="#projects"
-                className="flex w-full items-center rounded-md py-2 text-foreground hover:text-primary"
-                onClick={toggleMenu}
-              >
-                {t("header.projects")}
-              </a>
-              <a
-                href="#skills"
-                className="flex w-full items-center rounded-md py-2 text-foreground hover:text-primary"
-                onClick={toggleMenu}
-              >
-                {t("header.skills")}
-              </a>
-              <a
-                href="#contact"
-                className="flex w-full items-center rounded-md py-2 text-foreground hover:text-primary"
-                onClick={toggleMenu}
-              >
-                {t("header.contact")}
-              </a>
+              {items.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.href}
+                  className="flex w-full items-center rounded-md py-2 text-foreground hover:text-primary"
+                  onClick={toggleMenu}
+                >
+                  {item.label}
+                </a>
+              ))}
             </nav>
           </div>
         </div>

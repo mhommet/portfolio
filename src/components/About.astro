@@ -6,15 +6,37 @@ import ScrollAnimation from "./ScrollAnimation";
 // Get language from URL
 const urlPathname = Astro.url.pathname;
 const lang = urlPathname.startsWith('/en') ? 'en' : 'fr';
+
+// Transformer le texte de description pour gérer les retours à la ligne et les listes
+const aboutText = t("about.description", lang);
+const paragraphs = aboutText.split('\n\n').filter(p => p.trim() !== '');
 ---
 <section id="about" class="container py-24 md:py-32 lg:py-40 my-16">
   <div class="mx-auto flex max-w-5xl flex-col md:flex-row items-center justify-between gap-16">
     <div class="order-2 md:order-1 text-center md:text-left">
       <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-8 opacity-0">{t("about.title", lang)}</h2>
       <div class="space-y-6 text-muted-foreground text-lg md:text-xl opacity-0">
-        <p>
-          {t("about.description", lang)}
-        </p>
+        {paragraphs.map((paragraph) => {
+          // Détection si le paragraphe contient des éléments de liste (commençant par •)
+          if (paragraph.includes('• ')) {
+            const lines = paragraph.split('\n');
+            const intro = lines[0].endsWith(':') ? lines[0] : null;
+            const listItems = lines.filter(line => line.trim().startsWith('• ')).map(item => item.replace('• ', ''));
+            
+            return (
+              <div>
+                {intro && <p class="mb-4">{intro}</p>}
+                <ul class="list-disc space-y-3 pl-5">
+                  {listItems.map(item => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            );
+          } else {
+            return <p>{paragraph}</p>;
+          }
+        })}
       </div>
     </div>
     <div class="order-1 md:order-2 animate-content opacity-0">

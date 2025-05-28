@@ -9,13 +9,13 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "I'm Milan, a fullstack developer based in France.",
-    "description": "Full-Stack Developer with a Master's degree (Bac+5) and three years of work-study experience. I now offer my services as a freelance developer for your web and mobile projects.",
+    "greeting": "I'm Milan, a freelance fullstack developer.",
+    "description": "With a Master's degree and 3 years of professional experience, I offer my services as a freelancer to help you create, develop, and maintain your digital projects. Specialized in web and mobile development, I design high-performance, custom applications.",
     "job_title": "Freelance Fullstack Developer"
   },
   "about": {
     "title": "About Me",
-    "description": "Full-Stack Developer with a Master's degree (Bac+5) and three years of work-study experience. I now offer my services as a freelance developer for your web and mobile projects."
+    "description": "Passionate about development for several years, I am now a freelance fullstack developer.\n\nWith 3 years of experience in a digital services company, I build robust and efficient web, mobile, and desktop applications. I work with modern technologies such as React, Vue.js, Symfony, Next.js, Flutter, Electron, TypeScript, and Python.\nFamiliar with Agile methodologies (Scrum), I can easily integrate into an existing team or lead your project from start to finish.\n\nMy goal is simple: to provide you with clear, effective, and reliable solutions that meet the real needs of your users.\n\n👉 Available for freelance work on both short-term assignments and long-term projects."
   },
   "education": {
     "title": "Education",

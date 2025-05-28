@@ -9,13 +9,13 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "Je suis Milan, un développeur fullstack basé en France.",
-    "description": "Développeur Full-Stack diplômé d'un Bac+5, avec trois ans d'expérience en alternance. Je propose aujourd'hui mes services en freelance pour vos projets web et mobiles.",
+    "greeting": "Je suis Milan, développeur fullstack freelance.",
+    "description": "Diplômé d'un Bac+5 et fort de 3 ans d'expérience en alternance, je propose mes services en freelance pour vous accompagner dans la création, le développement et la maintenance de vos projets numériques. Spécialisé en développement web et mobile, je conçois des applications performantes et sur mesure.",
     "job_title": "Développeur Fullstack Freelance"
   },
   "about": {
     "title": "À propos",
-    "description": "Développeur Full-Stack diplômé d'un Bac+5, avec trois ans d'expérience en alternance. Je propose aujourd'hui mes services en freelance pour vos projets web et mobiles."
+    "description": "Passionné par le développement depuis plusieurs années, je suis aujourd'hui développeur fullstack freelance.\n\nFort de 3 ans d'expérience en alternance au sein d'une ESN, je conçois des applications web, mobiles et desktop robustes et performantes. Je travaille avec des technologies modernes comme React, Vue.js, Symfony, Next.js, Flutter, Electron, TypeScript et Python.\nHabitué aux méthodes agiles (Scrum), je m'intègre facilement à une équipe existante ou je peux piloter votre projet de A à Z.\n\nMon objectif est simple : vous fournir des solutions claires, efficaces et fiables, qui répondent aux besoins réels de vos utilisateurs.\n\n👉 Disponible en freelance pour des missions ponctuelles ou des projets au long cours."
   },
   "education": {
     "title": "Formation",
