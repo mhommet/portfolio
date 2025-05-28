@@ -50,7 +50,7 @@ export function useTranslation() {
 
       console.log("Langue changée pour:", newLang);
     },
-    [language]
+    [language],
   );
 
   // Fonction de traduction optimisée avec useCallback
@@ -58,7 +58,7 @@ export function useTranslation() {
     (key: string, params?: Record<string, string>) => {
       return serverT(key);
     },
-    [language]
+    [language],
   );
 
   return { t, language, changeLanguage };

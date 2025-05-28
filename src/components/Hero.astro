@@ -1,11 +1,17 @@
 ---
 import HeroButtons from "./HeroButtons";
 import HeroText from "./HeroText";
+import RotatingSphere from "./RotatingSphere";
 ---
 
-<section id="hero" class="container flex flex-col items-center justify-center py-28 md:py-36 lg:py-48 text-center">
-  <HeroText client:load />
-  <div class="mt-12">
-    <HeroButtons client:load />
+<section id="hero" class="container flex flex-col items-center justify-center py-4 md:py-8 lg:py-12 text-center relative">
+  <div class="w-full mb-0 absolute top-[-80px] left-0 right-0 z-10">
+    <RotatingSphere client:load />
+  </div>
+  <div class="mt-[170px] md:mt-[170px] lg:mt-[190px] z-20 relative">
+    <HeroText client:load />
+    <div class="mt-8 flex justify-center">
+      <HeroButtons client:load />
+    </div>
   </div>
 </section> 

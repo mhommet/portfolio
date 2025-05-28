@@ -119,7 +119,7 @@ export const setLanguage = (lang: "fr" | "en") => {
 // Recursive function to get nested translations
 const getNestedTranslation = (
   keys: string[],
-  translations: any
+  translations: any,
 ): string | undefined => {
   if (keys.length === 0) return undefined;
   if (keys.length === 1) return translations[keys[0]];

@@ -27,10 +27,15 @@
     "i18next": "^25.2.1",
     "lucide-react": "^0.511.0",
     "postcss": "^8.4.35",
+    "prettier": "^3.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-i18next": "^15.5.2",
     "tailwind-merge": "^3.3.0",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.7",
+    "three": "^0.176.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.176.0"
   }
 }
