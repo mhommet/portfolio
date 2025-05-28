@@ -19,7 +19,7 @@ const projects = [
   {
     titleKey: "projects.dday",
     descriptionKey: "projects.dday_desc",
-    image: "/images/normandy.jpg",
+    image: "https://images.unsplash.com/photo-1655540652139-66e01afa1d1c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tags: ["NextJS", "TailwindCSS"],
     link: "https://ddaynormandyexperience.com"
   }
@@ -37,7 +37,7 @@ const realProjects: RealProject[] = projects.map(project => ({
 const visitWebsiteText = lang === 'fr' ? 'Visiter le site' : 'Visit website';
 ---
 
-<section id="projects" class="container py-24 md:py-32 lg:py-40 my-16 bg-muted/10 rounded-xl">
+<section id="projects" class="container bg-muted/10 rounded-xl">
   <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-8 text-center">
     <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl opacity-0">{t("projects.title", lang)}</h2>
     <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed opacity-0">

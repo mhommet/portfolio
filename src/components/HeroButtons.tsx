@@ -6,7 +6,10 @@ const HeroButtons: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex gap-4 opacity-0 animate-content">
+    <div
+      id="hero-buttons"
+      className="flex gap-4 opacity-0 animate-fade-in-up animate-delay-2300"
+    >
       <Button
         asChild
         size="lg"

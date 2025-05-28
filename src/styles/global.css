@@ -120,3 +120,56 @@
 .container {
   @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl w-full;
 }
+
+/* Animations pour le hero section */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-800 {
+  animation-delay: 800ms;
+}
+
+.animate-delay-1300 {
+  animation-delay: 1300ms;
+}
+
+.animate-delay-1800 {
+  animation-delay: 1800ms;
+}
+
+.animate-delay-2300 {
+  animation-delay: 2300ms;
+}
+
+.animate-delay-2800 {
+  animation-delay: 2800ms;
+}
