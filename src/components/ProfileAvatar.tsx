@@ -3,7 +3,7 @@ import { t } from "@/i18n";
 
 const ProfileAvatar: React.FC = () => {
   return (
-    <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-primary shadow-xl">
+    <div className="relative h-64 w-64 overflow-hidden rounded-full">
       <img
         src="/profile.png"
         alt={t("hero.job_title")}

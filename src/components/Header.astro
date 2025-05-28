@@ -11,6 +11,8 @@ const skillsLabel = t("header.skills", lang);
 const contactLabel = t("header.contact", lang);
 const aboutLabel = t("header.about", lang);
 const projectsLabel = t("header.projects", lang);
+const experienceLabel = t("header.experience", lang);
+const educationLabel = t("header.education", lang);
 ---
 
 <header class="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -30,6 +32,12 @@ const projectsLabel = t("header.projects", lang);
         </a>
         <a href={`/${lang}/#skills`} class="px-4 py-2 text-sm font-medium hover:text-primary">
           {skillsLabel}
+        </a>
+        <a href={`/${lang}/#experience`} class="px-4 py-2 text-sm font-medium hover:text-primary">
+          {experienceLabel}
+        </a>
+        <a href={`/${lang}/#education`} class="px-4 py-2 text-sm font-medium hover:text-primary">
+          {educationLabel}
         </a>
         <a href={`/${lang}/#contact`} class="px-4 py-2 text-sm font-medium hover:text-primary">
           {contactLabel}

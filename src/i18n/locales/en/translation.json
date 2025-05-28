@@ -3,7 +3,7 @@
     "home": "Home",
     "about": "About",
     "skills": "Skills",
-    "experience": "Professional Experience",
+    "experience": "Experience",
     "education": "Education",
     "projects": "Projects",
     "contact": "Contact"
@@ -14,7 +14,7 @@
     "job_title": "Freelance Fullstack Developer"
   },
   "about": {
-    "title": "About",
+    "title": "About Me",
     "description": "Full-Stack Developer with a Master's degree (Bac+5) and three years of work-study experience. I now offer my services as a freelance developer for your web and mobile projects."
   },
   "education": {
