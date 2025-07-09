@@ -32,7 +32,6 @@ const ContactCard: React.FC = () => {
       {submitted ? (
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <h3 className="text-xl font-bold">{t("footer.send_message")}</h3>
-          <p className="text-muted-foreground">{t("footer.project_inquiry")}</p>
           <Button onClick={() => setSubmitted(false)}>
             {t("footer.send_message")}
           </Button>

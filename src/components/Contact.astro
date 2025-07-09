@@ -8,12 +8,9 @@ const urlPathname = Astro.url.pathname;
 const lang = urlPathname.startsWith('/en') ? 'en' : 'fr';
 ---
 
-<section id="contact" class="container bg-muted/10 rounded-xl">
+<section id="contact" class="container rounded-xl">
   <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-8 text-center">
     <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl opacity-0">{t("contact.title", lang)}</h2>
-    <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed opacity-0">
-      {t("contact.description", lang)}
-    </p>
   </div>
   <div class="mx-auto max-w-3xl items-center gap-8 py-16 text-center">
     <div class="flex flex-col gap-8 items-center animate-content opacity-0">

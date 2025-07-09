@@ -9,7 +9,6 @@ import Experience from '../../components/Experience.astro';
 import Education from '../../components/Education.astro';
 import Contact from '../../components/Contact.astro';
 import Footer from '../../components/Footer.astro';
-import GitHubProjects from '../../components/GitHubProjects.astro';
 
 // Générer les pages pour chaque langue
 export function getStaticPaths() {
@@ -28,7 +27,6 @@ const { lang } = Astro.params;
 		<Hero />
 		<About />
 		<Projects />
-		<GitHubProjects />
 		<Skills />
 		<Experience />
 		<Education />
