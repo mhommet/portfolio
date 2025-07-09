@@ -7,11 +7,9 @@ const RotatingSphere: React.FC = () => {
   const frameIdRef = useRef<number | null>(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-
-    // Créer la scène
+    if (!containerRef.current) return; // Créer la scène
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x000000);
+    // Pas de fond pour laisser le fond du site visible
 
     // Créer la caméra
     const camera = new THREE.PerspectiveCamera(
@@ -20,10 +18,9 @@ const RotatingSphere: React.FC = () => {
       0.1,
       1000
     );
-    camera.position.z = 5;
-
-    // Créer le renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    camera.position.z = 5; // Créer le renderer
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setClearColor(0x000000, 0); // Fond transparent
     renderer.setSize(
       containerRef.current.clientWidth,
       containerRef.current.clientHeight
