@@ -17,6 +17,41 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ items, lang }) => {
     setIsOpen(!isOpen);
   };
 
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const target = e.target as HTMLAnchorElement;
+    const href = target.getAttribute("href");
+
+    if (href && href.includes("#")) {
+      e.preventDefault();
+
+      // Fermer le menu mobile
+      setIsOpen(false);
+
+      // Extraire l'ID de la section
+      const sectionId = href.split("#")[1];
+      const section = document.getElementById(sectionId);
+
+      if (section) {
+        // Scroll fluide vers la section
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        // Mettre à jour l'URL
+        window.history.pushState(null, "", href);
+
+        // Déclencher l'événement hashchange pour activer les animations
+        setTimeout(() => {
+          window.dispatchEvent(new HashChangeEvent("hashchange"));
+        }, 300);
+      }
+    } else {
+      // Comportement normal pour les autres liens
+      toggleMenu();
+    }
+  };
+
   return (
     <>
       <button
@@ -46,12 +81,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ items, lang }) => {
         <div className="fixed inset-0 top-16 z-50 grid h-[calc(100vh-4rem)] grid-flow-row auto-rows-max overflow-auto pb-6 shadow-md animate-in slide-in-from-top-1 lg:hidden">
           <div className="relative z-20 bg-background p-6">
             <nav className="grid gap-6 text-lg font-medium">
+              {" "}
               {items.map((item, index) => (
                 <a
                   key={index}
                   href={item.href}
                   className="flex w-full items-center rounded-md py-2 text-foreground hover:text-primary"
-                  onClick={toggleMenu}
+                  onClick={handleAnchorClick}
                 >
                   {item.label}
                 </a>

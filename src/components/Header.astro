@@ -65,8 +65,44 @@ const menuItems = [
 </header>
 
 <script>
-  // Script pour s'assurer que le sélecteur de langue est correctement initialisé
+  // Script pour gérer la navigation par ancres et les animations
   document.addEventListener('DOMContentLoaded', () => {
-    console.log('Header DOM chargé, préparation du sélecteur de langue');
+    console.log('Header DOM chargé, configuration de la navigation');
+    
+    // Fonction pour gérer le smooth scroll et l'animation
+    const handleAnchorClick = (e: Event) => {
+      const target = e.target as HTMLAnchorElement;
+      const href = target.getAttribute('href');
+      
+      if (href && href.includes('#')) {
+        e.preventDefault();
+        
+        // Extraire l'ID de la section
+        const sectionId = href.split('#')[1];
+        const section = document.getElementById(sectionId);
+        
+        if (section) {
+          // Scroll fluide vers la section
+          section.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+          
+          // Mettre à jour l'URL
+          window.history.pushState(null, '', href);
+          
+          // Déclencher l'événement hashchange pour activer les animations
+          setTimeout(() => {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+          }, 300);
+        }
+      }
+    };
+    
+    // Ajouter les événements aux liens de navigation
+    const navLinks = document.querySelectorAll('header a[href*="#"]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', handleAnchorClick);
+    });
   });
-</script> 
+</script>

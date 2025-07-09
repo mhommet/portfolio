@@ -13,10 +13,11 @@ interface ScrollAnimationProps {
 
 const ScrollAnimation: React.FC<ScrollAnimationProps> = ({ sectionId }) => {
   const sectionRef = useRef<HTMLElement | null>(null);
-
   useEffect(() => {
     // S'assurer que le code s'exécute uniquement côté client
     if (typeof window === "undefined") return;
+
+    let handleHashChange: (() => void) | null = null;
 
     // Attendre que le DOM soit complètement chargé
     const initAnimation = () => {
@@ -78,10 +79,29 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({ sectionId }) => {
       }
 
       // Gérer le cas où on navigue directement vers une section via le menu
-      if (window.location.hash === `#${sectionId}`) {
-        // Forcer la lecture de l'animation
-        tl.play();
-      }
+      const checkAndTriggerAnimation = () => {
+        if (window.location.hash === `#${sectionId}`) {
+          // Forcer la lecture de l'animation immédiatement
+          tl.progress(1);
+          tl.play();
+        }
+      };
+
+      // Déclencher l'animation si on arrive directement sur cette section
+      checkAndTriggerAnimation();
+
+      // Écouter les changements de hash pour les liens d'ancrage
+      handleHashChange = () => {
+        if (window.location.hash === `#${sectionId}`) {
+          // Déclencher l'animation après un court délai pour laisser le temps à la page de scroller
+          setTimeout(() => {
+            tl.progress(1);
+            tl.play();
+          }, 200);
+        }
+      };
+
+      window.addEventListener("hashchange", handleHashChange);
     };
 
     // Initialiser l'animation après un court délai pour s'assurer que le DOM est prêt
@@ -90,6 +110,9 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({ sectionId }) => {
     // Nettoyage
     return () => {
       clearTimeout(timer);
+      if (handleHashChange) {
+        window.removeEventListener("hashchange", handleHashChange);
+      }
       // Tuer les instances de ScrollTrigger pour éviter les fuites de mémoire
       if (ScrollTrigger.getAll().length > 0) {
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
