@@ -10,63 +10,36 @@ interface RealProject {
   link: string;
 }
 
+const username = "mhommet";
+const repoCount = 15;
+const apiUrl = `https://api.github.com/users/${username}/repos?per_page=${repoCount}&sort=updated`;
+
+let repositories = [];
+try {
+  const response = await fetch(apiUrl);
+  if (response.ok) {
+    repositories = await response.json();
+  }
+} catch (e) {
+  // Optionnel : gestion d'erreur
+}
+
 // Récupérer la langue depuis l'URL
 const urlPathname = Astro.url.pathname;
 const lang = urlPathname.startsWith('/en') ? 'en' : 'fr';
 
-// Utiliser la langue détectée pour récupérer les traductions
-const projects = [
-  {
-    titleKey: "projects.dday",
-    descriptionKey: "projects.dday_desc",
-    image: "https://images.unsplash.com/photo-1655540652139-66e01afa1d1c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    tags: ["NextJS", "TailwindCSS"],
-    link: "https://ddaynormandyexperience.com"
-  }
-];
-
-// Transformer les projets en ajoutant les traductions correctes
-const realProjects: RealProject[] = projects.map(project => ({
-  title: t(project.titleKey, lang),
-  description: t(project.descriptionKey, lang),
-  image: project.image,
-  tags: project.tags,
-  link: project.link
-}));
-
-const visitWebsiteText = lang === 'fr' ? 'Visiter le site' : 'Visit website';
 ---
 
-<section id="projects" class="container bg-muted/10 rounded-xl">
+<section id="projects" class="container rounded-xl">
   <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-8 text-center">
     <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl opacity-0">{t("projects.title", lang)}</h2>
-    <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed opacity-0">
-      {t("projects.description", lang)}
-    </p>
   </div>
-  <div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-16">
-    {realProjects.map((project) => (
-      <div class="flex flex-col md:flex-row overflow-hidden border border-accent/20 hover:border-accent/50 transition-all duration-300 hover:shadow-md rounded-lg animate-content opacity-0">
-        <div class="md:w-1/3">
-          <img src={project.image} alt={project.title} class="h-full w-full object-cover" />
-        </div>
-        <div class="p-8 md:w-2/3">
-          <h3 class="text-xl font-bold mb-3">{project.title}</h3>
-          <p class="mb-4 text-muted-foreground">{project.description}</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            {project.tags.map((tag) => (
-              <span class="px-2 py-1 bg-primary/10 text-primary text-sm rounded-full">{tag}</span>
-            ))}
-          </div>
-          <a href={project.link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors">
-            {visitWebsiteText}
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </a>
-        </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+    {repositories.map((repo: any) => (
+      <div class="border p-4 rounded shadow animate-content opacity-0" style="min-height: 120px;">
+        <h3 class="font-bold">{repo.name}</h3>
+        <p>{repo.description || 'Aucune description'}</p>
+        <a href={repo.html_url} target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Voir sur GitHub</a>
       </div>
     ))}
   </div>
