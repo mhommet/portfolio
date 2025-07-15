@@ -110,8 +110,14 @@ const RotatingSphere: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full h-full min-h-screen flex items-center justify-center"
-      style={{ position: "relative" }}
+      className="w-full h-full flex items-center justify-center"
+      style={{
+        width: "100%",
+        height: "100%",
+        maxWidth: 420,
+        maxHeight: 420,
+        position: "relative",
+      }}
     />
   );
 };
