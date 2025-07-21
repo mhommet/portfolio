@@ -2,6 +2,7 @@
 import ProfileAvatar from "./ProfileAvatar";
 import { t } from "../i18n";
 import ScrollAnimation from "./ScrollAnimation";
+import { Button } from "./ui/button";
 
 // Get language from URL
 const urlPathname = Astro.url.pathname;
@@ -10,6 +11,9 @@ const lang = urlPathname.startsWith('/en') ? 'en' : 'fr';
 // Transformer le texte de description pour gérer les retours à la ligne et les listes
 const aboutText = t("about.description", lang);
 const paragraphs = aboutText.split('\n\n').filter(p => p.trim() !== '');
+
+// CV file path based on language
+const cvPath = lang === 'en' ? '/documents/CV_MILAN_HOMMET_EN.pdf' : '/documents/CV_MILAN_HOMMET_FR.pdf';
 ---
 <section id="about" class="container">
   <div class="mx-auto flex max-w-6xl flex-col md:flex-row items-center justify-between gap-8 lg:gap-16">
@@ -37,6 +41,15 @@ const paragraphs = aboutText.split('\n\n').filter(p => p.trim() !== '');
             return <p>{paragraph}</p>;
           }
         })}
+        
+        <div class="pt-4">
+          <a href={cvPath} download>
+            <Button variant="outline" size="lg" className="group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4 transition-transform group-hover:translate-y-1"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              {t("cv.download", lang)}
+            </Button>
+          </a>
+        </div>
       </div>
     </div>
     <div class="order-1 md:order-2 animate-content opacity-0 flex justify-center mb-12 md:mb-0">
