@@ -32,11 +32,11 @@ const lang = urlPathname.startsWith('/en') ? 'en' : 'fr';
 
 <section id="projects" class="container rounded-xl">
   <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-8 text-center">
-    <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl opacity-0">{t("projects.title", lang)}</h2>
+    <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl md:opacity-0 opacity-100">{t("projects.title", lang)}</h2>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
     {repositories.map((repo: any) => (
-      <div class="border p-4 rounded shadow animate-content opacity-0" style="min-height: 120px;">
+      <div class="border p-4 rounded shadow animate-content md:opacity-0 opacity-100" style="min-height: 120px;">
         <h3 class="font-bold">{repo.name}</h3>
         <p>{repo.description || 'Aucune description'}</p>
         <a href={repo.html_url} target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Voir sur GitHub</a>

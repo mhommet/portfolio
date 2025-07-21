@@ -17,6 +17,29 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({ sectionId }) => {
     // S'assurer que le code s'exécute uniquement côté client
     if (typeof window === "undefined") return;
 
+    // Vérifier si on est sur mobile
+    const isMobile = window.innerWidth < 768;
+
+    // Sur mobile, rendre tous les éléments visibles immédiatement sans animation
+    if (isMobile) {
+      sectionRef.current = document.getElementById(sectionId);
+      if (!sectionRef.current) return;
+
+      // Sélectionner les éléments à rendre visibles
+      const title = sectionRef.current.querySelector("h2");
+      const subtitle = sectionRef.current.querySelector(
+        ".text-muted-foreground"
+      );
+      const content = sectionRef.current.querySelectorAll(".animate-content");
+
+      // Rendre tous les éléments visibles immédiatement
+      if (title) gsap.set(title, { opacity: 1, y: 0 });
+      if (subtitle) gsap.set(subtitle, { opacity: 1, y: 0 });
+      if (content.length > 0) gsap.set(content, { opacity: 1, y: 0 });
+
+      return;
+    }
+
     let handleHashChange: (() => void) | null = null;
 
     // Attendre que le DOM soit complètement chargé
@@ -33,40 +56,37 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({ sectionId }) => {
       );
       const content = sectionRef.current.querySelectorAll(".animate-content");
 
-      // Vérifier si on est sur mobile
-      const isMobile = window.innerWidth < 768;
-
-      // Créer la timeline GSAP avec des paramètres adaptés pour mobile
+      // Créer la timeline GSAP pour desktop uniquement
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: isMobile ? "top 90%" : "top 80%", // Démarrer plus tôt sur mobile
-          end: isMobile ? "bottom 10%" : "bottom 20%",
-          toggleActions: "play none none none", // Jouer l'animation une seule fois
-          once: false, // Ne pas limiter à une seule exécution
-          markers: false, // Utile pour le débogage, à désactiver en production
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+          once: false,
+          markers: false,
         },
       });
 
       // Animation du titre
       if (title) {
-        gsap.set(title, { opacity: 0, y: 50 }); // S'assurer que l'état initial est correct
+        gsap.set(title, { opacity: 0, y: 50 });
         tl.to(title, { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" });
       }
 
       // Animation du sous-titre
       if (subtitle) {
-        gsap.set(subtitle, { opacity: 0, y: 30 }); // S'assurer que l'état initial est correct
+        gsap.set(subtitle, { opacity: 0, y: 30 });
         tl.to(
           subtitle,
           { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" },
-          "-=0.4" // Commencer légèrement avant la fin de l'animation précédente
+          "-=0.4"
         );
       }
 
       // Animation du contenu
       if (content.length > 0) {
-        gsap.set(content, { opacity: 0, y: 20 }); // S'assurer que l'état initial est correct
+        gsap.set(content, { opacity: 0, y: 20 });
         tl.to(
           content,
           {
@@ -104,25 +124,10 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({ sectionId }) => {
       };
 
       window.addEventListener("hashchange", handleHashChange);
-
-      // Ajouter un écouteur pour les changements de taille d'écran
-      const handleResize = () => {
-        // Rafraîchir ScrollTrigger pour qu'il s'adapte à la nouvelle taille d'écran
-        ScrollTrigger.refresh();
-      };
-
-      window.addEventListener("resize", handleResize);
-
-      // Forcer un refresh initial de ScrollTrigger
-      ScrollTrigger.refresh();
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
     };
 
     // Initialiser l'animation après un court délai pour s'assurer que le DOM est prêt
-    const timer = setTimeout(initAnimation, 300); // Augmenter le délai pour mobile
+    const timer = setTimeout(initAnimation, 100);
 
     // Nettoyage
     return () => {
