@@ -17,12 +17,12 @@ const skills = {
 
 <section id="skills" class="container rounded-xl">
   <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-8 text-center">
-    <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl opacity-0">{t("skills.title", lang)}</h2>
-    <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed opacity-0">
+    <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl md:opacity-0 opacity-100">{t("skills.title", lang)}</h2>
+    <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed md:opacity-0 opacity-100">
       {t("skills.description", lang)}
     </p>
   </div>
-  <div class="rounded-xl p-10 mt-16 max-w-5xl mx-auto animate-content opacity-0">
+  <div class="rounded-xl p-10 mt-16 max-w-5xl mx-auto animate-content md:opacity-0 opacity-100">
     <SkillBadges client:load skills={skills} />
   </div>
   <ScrollAnimation client:load sectionId="skills" />

@@ -6,15 +6,77 @@ interface Props {
 	lang?: string;
 }
 
-const { title = "Portfolio Personnel", lang = "fr" } = Astro.props;
+const { title = "Milan Hommet - Développeur Fullstack", lang = "fr" } = Astro.props;
+
+// Descriptions dynamiques selon la langue
+const descriptions = {
+	fr: "Milan Hommet, développeur fullstack avec 3 ans d'expérience. Spécialisé en React, Vue.js, Symfony, Flutter, TypeScript et Python. Portfolio et projets.",
+	en: "Milan Hommet, fullstack developer with 3 years of experience. Specialized in React, Vue.js, Symfony, Flutter, TypeScript and Python. Portfolio and projects."
+};
+
+const keywords = {
+	fr: "Milan Hommet, développeur fullstack, React, Vue.js, Symfony, Flutter, TypeScript, Python, portfolio, développeur web, développeur mobile",
+	en: "Milan Hommet, fullstack developer, React, Vue.js, Symfony, Flutter, TypeScript, Python, portfolio, web developer, mobile developer"
+};
+
+const description = descriptions[lang as keyof typeof descriptions] || descriptions.fr;
+const keywordList = keywords[lang as keyof typeof keywords] || keywords.fr;
+
+// Données structurées JSON-LD
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Milan Hommet",
+	"jobTitle": lang === 'fr' ? "Développeur Fullstack" : "Fullstack Developer",
+	"description": description,
+	"url": `https://milan-hommet.vercel.app/${lang}`,
+	"image": "https://milan-hommet.vercel.app/profile.jpg",
+	"sameAs": [
+		"https://github.com/mhommet",
+		"https://linkedin.com/in/milan-hommet"
+	],
+	"knowsAbout": [
+		"React", "Vue.js", "Symfony", "Flutter", "TypeScript", "Python", 
+		"JavaScript", "Node.js", "Electron", "MySQL", "MongoDB"
+	],
+	"alumniOf": [
+		{
+			"@type": "EducationalOrganization",
+			"name": "MyDigitalSchool"
+		}
+	],
+	"worksFor": {
+		"@type": "Organization",
+		"name": "Téïcée"
+	}
+};
 ---
 
 <!doctype html>
 <html lang={lang} class="dark">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Portfolio personnel - Design moderne et élégant" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywordList} />
+		<meta name="author" content="Milan Hommet" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/profile.jpg" />
+		<meta property="og:url" content="https://milan-hommet.vercel.app" />
+		<meta property="og:site_name" content="Milan Hommet Portfolio" />
+		
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="/profile.jpg" />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={`https://milan-hommet.vercel.app/${lang}`} />
 		
 		<!-- Favicons -->
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -22,6 +84,12 @@ const { title = "Portfolio Personnel", lang = "fr" } = Astro.props;
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="icon" type="image/x-icon" href="/favicon.ico">
 		<link rel="manifest" href="/site.webmanifest">
+		
+		<!-- Preload critical resources -->
+		<link rel="preload" href="/profile.jpg" as="image" type="image/jpeg" />
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
 		
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>

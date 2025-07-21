@@ -59,14 +59,14 @@ const educations: Education[] = [
 
 <section id="education" class="container rounded-xl">
   <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-8 text-center">
-    <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl opacity-0">{t("education.title", lang)}</h2>
-    <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed opacity-0">
+    <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl md:opacity-0 opacity-100">{t("education.title", lang)}</h2>
+    <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed md:opacity-0 opacity-100">
       {lang === 'fr' ? 'Mon parcours académique' : 'My academic journey'}
     </p>
   </div>
   <div class="mx-auto max-w-5xl py-16">
     {educations.map((edu, index) => (
-      <div class="flex flex-col overflow-hidden border border-accent/20 hover:border-accent/50 transition-all duration-300 hover:shadow-md rounded-lg p-8 mb-12 animate-content opacity-0">
+      <div class="flex flex-col overflow-hidden border border-accent/20 hover:border-accent/50 transition-all duration-300 hover:shadow-md rounded-lg p-8 mb-12 animate-content md:opacity-0 opacity-100">
         <div class="flex flex-col md:flex-row md:justify-between gap-12 md:gap-24">
           <div class="md:w-1/3 text-center md:text-left">
             <h3 class="text-xl font-bold">{edu.degree}</h3>
