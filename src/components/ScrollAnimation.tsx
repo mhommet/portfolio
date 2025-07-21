@@ -33,30 +33,32 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({ sectionId }) => {
       );
       const content = sectionRef.current.querySelectorAll(".animate-content");
 
-      // Créer la timeline GSAP
+      // Vérifier si on est sur mobile
+      const isMobile = window.innerWidth < 768;
+
+      // Créer la timeline GSAP avec des paramètres adaptés pour mobile
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%", // Démarrer l'animation quand le haut de la section atteint 80% de la fenêtre
-          end: "bottom 20%", // Terminer quand le bas atteint 20% de la fenêtre
+          start: isMobile ? "top 90%" : "top 80%", // Démarrer plus tôt sur mobile
+          end: isMobile ? "bottom 10%" : "bottom 20%",
           toggleActions: "play none none none", // Jouer l'animation une seule fois
+          once: false, // Ne pas limiter à une seule exécution
+          markers: false, // Utile pour le débogage, à désactiver en production
         },
       });
 
       // Animation du titre
       if (title) {
-        tl.fromTo(
-          title,
-          { y: 50, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }
-        );
+        gsap.set(title, { opacity: 0, y: 50 }); // S'assurer que l'état initial est correct
+        tl.to(title, { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" });
       }
 
       // Animation du sous-titre
       if (subtitle) {
-        tl.fromTo(
+        gsap.set(subtitle, { opacity: 0, y: 30 }); // S'assurer que l'état initial est correct
+        tl.to(
           subtitle,
-          { y: 30, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" },
           "-=0.4" // Commencer légèrement avant la fin de l'animation précédente
         );
@@ -64,9 +66,9 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({ sectionId }) => {
 
       // Animation du contenu
       if (content.length > 0) {
-        tl.fromTo(
+        gsap.set(content, { opacity: 0, y: 20 }); // S'assurer que l'état initial est correct
+        tl.to(
           content,
-          { y: 20, opacity: 0 },
           {
             y: 0,
             opacity: 1,
@@ -102,10 +104,25 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({ sectionId }) => {
       };
 
       window.addEventListener("hashchange", handleHashChange);
+
+      // Ajouter un écouteur pour les changements de taille d'écran
+      const handleResize = () => {
+        // Rafraîchir ScrollTrigger pour qu'il s'adapte à la nouvelle taille d'écran
+        ScrollTrigger.refresh();
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      // Forcer un refresh initial de ScrollTrigger
+      ScrollTrigger.refresh();
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
     };
 
     // Initialiser l'animation après un court délai pour s'assurer que le DOM est prêt
-    const timer = setTimeout(initAnimation, 100);
+    const timer = setTimeout(initAnimation, 300); // Augmenter le délai pour mobile
 
     // Nettoyage
     return () => {

@@ -19,8 +19,8 @@ const cvFileName = lang === 'en' ? 'CV_MILAN_HOMMET_EN.pdf' : 'CV_MILAN_HOMMET_F
 <section id="about" class="container">
   <div class="mx-auto flex max-w-6xl flex-col md:flex-row items-center justify-between gap-8 lg:gap-16">
     <div class="order-2 md:order-1 text-center md:text-left md:flex-1">
-      <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-8 opacity-0">{t("about.title", lang)}</h2>
-      <div class="space-y-6 text-muted-foreground text-lg md:text-xl opacity-0">
+      <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-8">{t("about.title", lang)}</h2>
+      <div class="space-y-6 text-muted-foreground text-lg md:text-xl">
         {paragraphs.map((paragraph) => {
           // Détection si le paragraphe contient des éléments de liste (commençant par •)
           if (paragraph.includes('• ')) {
@@ -43,7 +43,7 @@ const cvFileName = lang === 'en' ? 'CV_MILAN_HOMMET_EN.pdf' : 'CV_MILAN_HOMMET_F
           }
         })}
         
-        <div class="pt-4">
+        <div class="pt-4 animate-content">
           <a href={cvPath} download={cvFileName}>
             <Button variant="outline" size="lg" className="group">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4 transition-transform group-hover:translate-y-1"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
@@ -53,7 +53,7 @@ const cvFileName = lang === 'en' ? 'CV_MILAN_HOMMET_EN.pdf' : 'CV_MILAN_HOMMET_F
         </div>
       </div>
     </div>
-    <div class="order-1 md:order-2 animate-content opacity-0 flex justify-center mb-12 md:mb-0">
+    <div class="order-1 md:order-2 animate-content flex justify-center mb-12 md:mb-0">
       <ProfileAvatar client:load />
     </div>
   </div>
