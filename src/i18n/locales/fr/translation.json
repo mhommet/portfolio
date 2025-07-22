@@ -44,6 +44,10 @@
     "title": "CV",
     "download": "Télécharger mon cv"
   },
+  "memoire": {
+    "title": "Mémoire",
+    "download": "Télécharger mon mémoire"
+  },
   "language": {
     "fr": "Français",
     "en": "Anglais",
