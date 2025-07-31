@@ -9,13 +9,13 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "Je suis Milan, développeur fullstack.",
-    "description": "Diplômé d'un Bac+5 et fort de 3 ans d'expérience en alternance, je suis spécialisé en développement web et mobile.",
-    "job_title": "Développeur Fullstack"
+    "greeting": "Je suis Milan, développeur backend.",
+    "description": "Diplômé d'un Bac+5 et fort de 3 ans d'expérience en alternance, je suis spécialisé en développement backend avec Python.",
+    "job_title": "Développeur Backend"
   },
   "about": {
     "title": "À propos",
-    "description": "Fort de 3 ans d'expérience en alternance au sein d'une ESN, je conçois des applications web, mobiles et desktop robustes et performantes. Je travaille avec des technologies modernes comme React, Vue.js, Symfony, Next.js, Flutter, Electron, TypeScript et Python."
+    "description": "Fort de 3 ans d'expérience en alternance au sein d'une ESN, je conçois des applications backend robustes et performantes. Je suis spécialisé en Python et ses frameworks comme Flask et Django. Mon expertise s'étend à la conception d'APIs, l'optimisation des bases de données et l'architecture de systèmes backend scalables."
   },
   "education": {
     "title": "Formation",
@@ -66,6 +66,6 @@
     "social_media": "Retrouvez-moi sur les réseaux sociaux pour suivre mes projets et actualités.",
     "send_message": "Envoyer un message",
     "copyright": "Tous droits réservés",
-    "freelance_dev": "Développeur Fullstack"
+    "freelance_dev": "Développeur Backend"
   }
 }
