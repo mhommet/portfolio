@@ -20,9 +20,13 @@ jobs:
 
       - name: Copy project files to server
         run: |
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" ./ \
+            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/home/milan/services/portfolio
+
+      - name: Build and restart container
+        run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
             cd ~/services/portfolio
-            git pull
             docker compose build
             docker compose up -d
           EOF
