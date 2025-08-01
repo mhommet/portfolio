@@ -18,12 +18,15 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Copy project files to server
+      - name: Sync project to server
         run: |
-          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" ./ \
-            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/home/milan/services/portfolio
+          rsync -avz --delete \
+            --exclude='.git' \
+            --rsync-path="mkdir -p /home/milan/services/portfolio && rsync" \
+            -e "ssh -o StrictHostKeyChecking=no" \
+            ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/home/milan/services/portfolio
 
-      - name: Build and restart container
+      - name: Rebuild and restart container
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
             cd ~/services/portfolio
