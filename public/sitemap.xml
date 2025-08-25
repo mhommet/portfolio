@@ -13,13 +13,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://milan-hommet.vercel.app/documents/CV_MILAN_HOMMET_FR.pdf</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://milan-hommet.vercel.app/documents/CV_MILAN_HOMMET_EN.pdf</loc>
+    <loc>https://milan-hommet.vercel.app/documents/CV_MILAN_HOMMET.pdf</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
