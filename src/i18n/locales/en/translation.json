@@ -10,12 +10,12 @@
   },
   "hero": {
     "greeting": "I'm Milan, a backend developer.",
-    "description": "With a Master's degree and 3 years of professional experience, I specialize in backend development with Python.",
+    "description": "With a Master's degree and 3 years of professional experience, I specialize in backend development.",
     "job_title": "Backend Developer"
   },
   "about": {
     "title": "About Me",
-    "description": "With 3 years of experience in a digital services company, I build robust and efficient backend applications. I specialize in Python and its frameworks like Flask and Django. My expertise extends to API design, database optimization, and scalable backend system architecture."
+    "description": "With 3 years of experience in a digital services company, I build robust and efficient backend applications. My expertise extends to API design, database optimization, and scalable backend system architecture."
   },
   "education": {
     "title": "Education",
