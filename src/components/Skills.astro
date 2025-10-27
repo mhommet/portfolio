@@ -5,25 +5,38 @@ import ScrollAnimation from "./ScrollAnimation";
 
 // Récupérer la langue depuis l'URL
 const urlPathname = Astro.url.pathname;
-const lang = urlPathname.startsWith('/en') ? 'en' : 'fr';
+const lang = urlPathname.startsWith("/en") ? "en" : "fr";
 
 // Définir les compétences avec les traductions
 const skills = {
-  [t("skills.languages", lang)]: ["Python", "JavaScript", "Typescript", "Dart", "PHP"],
-  [t("skills.frameworks", lang)]: ["Flask", "React", "Symfony", "VueJS", "NextJS", "NodeJS", "Flutter", "Electron"],
-  [t("skills.database", lang)]: ["MySQL", "MongoDB"]
+  [t("skills.infrastructure", lang)]: ["Docker", "Kubernetes", "Linux", "Bash"],
+  [t("skills.ci_cd", lang)]: ["Gitlab CI/CD", "Github Actions"],
+  [t("skills.monitoring", lang)]: ["Grafana", "Prometheus", "Sentry"],
+  [t("skills.development", lang)]: ["PHPUnit", "Cypress"],
+  [t("skills.languages", lang)]: ["Python", "NodeJS", "Symfony", "MySQL"],
 };
 ---
 
 <section id="skills" class="container rounded-xl">
-  <div class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-8 text-center">
-    <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl md:opacity-0 opacity-100">{t("skills.title", lang)}</h2>
-    <p class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed md:opacity-0 opacity-100">
+  <div
+    class="mx-auto flex max-w-5xl flex-col items-center justify-center space-y-8 text-center"
+  >
+    <h2
+      class="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl md:opacity-0 opacity-100"
+    >
+      {t("skills.title", lang)}
+    </h2>
+    <p
+      class="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed md:opacity-0 opacity-100"
+    >
       {t("skills.description", lang)}
     </p>
   </div>
-  <div class="rounded-xl p-10 mt-16 max-w-5xl mx-auto animate-content md:opacity-0 opacity-100">
+  <div
+    class="rounded-xl p-10 mt-16 max-w-5xl mx-auto animate-content md:opacity-0 opacity-100"
+  >
     <SkillBadges client:load skills={skills} />
   </div>
   <ScrollAnimation client:load sectionId="skills" />
-</section> 
+</section>
+

@@ -4,18 +4,20 @@ import HeroText from "./HeroText";
 import RotatingSphere from "./RotatingSphere";
 ---
 
-
-
-
-
-<section id="hero" class="w-full min-h-screen flex flex-col items-center justify-center overflow-hidden p-0 m-0">
-  <div class="flex flex-col items-center justify-center w-full h-screen gap-10 pt-8">
-    <div class="flex-shrink-0 flex items-center justify-center" style="width:420px;height:420px;max-width:90vw;max-height:70vh;">
+<section
+  id="hero"
+  class="w-full min-h-[85vh] flex flex-col items-center pt-16"
+>
+  <div class="container flex flex-col items-center gap-6">
+    <div
+      class="flex-shrink-0 flex items-center justify-center"
+      style="width:320px;height:320px;max-width:70vw;max-height:50vh;"
+    >
       <RotatingSphere client:load />
     </div>
     <div class="flex flex-col items-center justify-center text-center">
       <HeroText client:load />
-      <div class="mt-8 flex justify-center">
+      <div class="mt-6 flex justify-center">
         <HeroButtons client:load />
       </div>
     </div>

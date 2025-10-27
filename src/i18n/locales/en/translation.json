@@ -9,13 +9,13 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "I'm Milan, a backend developer.",
-    "description": "With a Master's degree and 3 years of professional experience, I specialize in backend development.",
-    "job_title": "Backend Developer"
+    "greeting": "I'm Milan, a DevOps Engineer.",
+    "description": "With a Master's degree and 3 years of professional experience, I specialize in automation, continuous deployment, and cloud infrastructure management.",
+    "job_title": "DevOps Engineer"
   },
   "about": {
     "title": "About Me",
-    "description": "With 3 years of experience in a digital services company, I build robust and efficient backend applications. My expertise extends to API design, database optimization, and scalable backend system architecture."
+    "description": "With 3 years of experience in a digital services company, I master modern DevOps practices. My expertise ranges from containerization with Docker to orchestration with Kubernetes, including setting up CI/CD pipelines and application monitoring. I am passionate about automating and optimizing development and deployment processes."
   },
   "education": {
     "title": "Education",
@@ -29,10 +29,12 @@
   },
   "skills": {
     "title": "Skills",
-    "description": "Backend Developer",
-    "languages": "Programming Languages",
-    "frameworks": "Frameworks",
-    "database": "Databases"
+    "description": "DevOps Engineer",
+    "infrastructure": "Infrastructure & Containerization",
+    "ci_cd": "CI/CD & Automation",
+    "monitoring": "Monitoring & Observability",
+    "development": "Development & Testing",
+    "languages": "Languages & Frameworks"
   },
   "projects": {
     "title": "Projects",
@@ -68,6 +70,6 @@
     "social_media": "Find me on social media to follow my projects and news.",
     "send_message": "Send a message",
     "copyright": "All rights reserved",
-    "freelance_dev": "Backend Developer"
+    "freelance_dev": "DevOps Engineer"
   }
 }
