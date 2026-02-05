@@ -9,13 +9,13 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "Je suis Milan, ingénieur DevOps.",
-    "description": "Diplômé d'un Bac+5 et fort de 3 ans d'expérience en alternance, je suis spécialisé dans l'automatisation, le déploiement continu et la gestion d'infrastructures cloud.",
-    "job_title": "Ingénieur DevOps"
+    "greeting": "Je suis Milan, ingénieur DevOps & développeur.",
+    "description": "Je conçois des pipelines de déploiement (CI/CD), j’industrialise l’infrastructure (IaC) et je développe des applications axées sur la performance et l'observabilité.",
+    "job_title": "Ingénieur DevOps / Développeur"
   },
   "about": {
     "title": "À propos",
-    "description": "Fort de 3 ans d'expérience en alternance au sein d'une ESN, je maîtrise les pratiques DevOps modernes. Mon expertise s'étend de la conteneurisation avec Docker à l'orchestration avec Kubernetes, en passant par la mise en place de pipelines CI/CD et le monitoring d'applications. Je suis passionné par l'automatisation et l'optimisation des processus de développement et de déploiement."
+    "description": "Alliant développement logiciel et culture DevOps, j'apporte une vision globale sur mes projets (3 ans en ESN). Je conçois des applications maintenables tout en construisant l'outillage qui les supporte : de l'architecture du code à la conteneurisation (Docker) et aux pipelines CI/CD. Mon objectif : livrer du code de qualité, rendu robuste par une automatisation sans faille."
   },
   "education": {
     "title": "Formation",
@@ -29,12 +29,14 @@
   },
   "skills": {
     "title": "Compétences",
-    "description": "Ingénieur DevOps",
+    "description": "Ingénieur DevOps & Développeur",
     "infrastructure": "Infrastructure & Conteneurisation",
     "ci_cd": "CI/CD & Automatisation",
     "monitoring": "Monitoring & Observabilité",
-    "development": "Développement & Testing",
-    "languages": "Langages & Frameworks"
+    "languages": "Langages de programmation",
+    "frameworks": "Frameworks & Librairies",
+    "databases": "Bases de données",
+    "testing": "Tests & Qualité"
   },
   "projects": {
     "title": "Projets",
@@ -68,6 +70,6 @@
     "social_media": "Retrouvez-moi sur les réseaux sociaux pour suivre mes projets et actualités.",
     "send_message": "Envoyer un message",
     "copyright": "Tous droits réservés",
-    "freelance_dev": "Ingénieur DevOps"
+    "freelance_dev": "Ingénieur DevOps & Développeur"
   }
 }

@@ -9,11 +9,18 @@ const lang = urlPathname.startsWith("/en") ? "en" : "fr";
 
 // Définir les compétences avec les traductions
 const skills = {
-  [t("skills.infrastructure", lang)]: ["Docker", "Kubernetes", "Linux", "Bash"],
+  // Partie DevOps (inchangée)
+  [t("skills.infrastructure", lang)]: ["Docker", "Linux", "Bash"],
   [t("skills.ci_cd", lang)]: ["Gitlab CI/CD", "Github Actions"],
   [t("skills.monitoring", lang)]: ["Grafana", "Prometheus", "Sentry"],
-  [t("skills.development", lang)]: ["PHPUnit", "Cypress"],
-  [t("skills.languages", lang)]: ["Python", "NodeJS", "Symfony", "MySQL"],
+
+  // Partie Dev (Restructurée)
+  [t("skills.languages", lang)]: ["Rust", "Dart", "Python", "PHP", "TypeScript"],
+  [t("skills.frameworks", lang)]: ["Tauri", "Flutter", "Electron", "Symfony", "Node.js"],
+  [t("skills.databases", lang)]: ["PostgreSQL", "MongoDB", "MySQL"],
+  
+  // J'ai gardé les tests à part car c'est un point fort DevOps
+  [t("skills.testing", lang)]: ["Cypress", "PHPUnit"],
 };
 ---
 

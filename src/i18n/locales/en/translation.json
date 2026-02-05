@@ -9,13 +9,13 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "I'm Milan, a DevOps Engineer.",
-    "description": "With a Master's degree and 3 years of professional experience, I specialize in automation, continuous deployment, and cloud infrastructure management.",
-    "job_title": "DevOps Engineer"
+    "greeting": "Hi, I'm Milan, DevOps Engineer & Developer.",
+    "description": "I design deployment pipelines (CI/CD), standardize infrastructure (IaC), and develop applications focused on performance and observability.",
+    "job_title": "DevOps Engineer / Developer"
   },
   "about": {
     "title": "About Me",
-    "description": "With 3 years of experience in a digital services company, I master modern DevOps practices. My expertise ranges from containerization with Docker to orchestration with Kubernetes, including setting up CI/CD pipelines and application monitoring. I am passionate about automating and optimizing development and deployment processes."
+    "description": "Bridging software development and DevOps culture, I bring an end-to-end perspective to my projects (3 years in IT consulting). I design maintainable applications while building the tooling that supports them: from code architecture to containerization (Docker) and CI/CD pipelines. My goal: shipping quality code, hardened by seamless automation."
   },
   "education": {
     "title": "Education",
@@ -29,12 +29,14 @@
   },
   "skills": {
     "title": "Skills",
-    "description": "DevOps Engineer",
+    "description": "DevOps Engineer & Developer",
     "infrastructure": "Infrastructure & Containerization",
     "ci_cd": "CI/CD & Automation",
     "monitoring": "Monitoring & Observability",
-    "development": "Development & Testing",
-    "languages": "Languages & Frameworks"
+    "languages": "Programming Languages",
+    "frameworks": "Frameworks & Libraries",
+    "databases": "Databases",
+    "testing": "Testing & QA"
   },
   "projects": {
     "title": "Projects",
@@ -70,6 +72,6 @@
     "social_media": "Find me on social media to follow my projects and news.",
     "send_message": "Send a message",
     "copyright": "All rights reserved",
-    "freelance_dev": "DevOps Engineer"
+    "freelance_dev": "DevOps Engineer & Developer"
   }
 }
